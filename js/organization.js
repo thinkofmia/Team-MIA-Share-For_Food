@@ -48,7 +48,7 @@ displayStores = function(canteenName){
     //Save Selected Canteen Name
     canteen = canteenName;
     //Check boxes for Halal, Veg and Allergies
-    document.getElementById("subtext1").innerHTML = 
+    document.getElementById("subtext1").innerHTML+
     "<input type='checkbox' id='halalCheck' name='Halal'>"+
     "<label for='halalCheck'> Halal</label><br>"+
     "<input type='checkbox' id='vegCheck' name='Vegetarian'>"+
