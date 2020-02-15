@@ -1,5 +1,8 @@
 var foodStore = [];
 
+const database = firebase.database();
+const usersRef = database.ref('/users');
+
 //Start Page
 pickFoodStorePage = function(){
     hideAllPages();
@@ -64,4 +67,3 @@ foodStoreEnd = function(){
         document.getElementById("maintext").innerHTML = "<h1>Thank You "+foodStore.selected+" for donating: <br></h1>"+foodDelievered;
     }
 }
-
