@@ -8,8 +8,10 @@ var store = "";
 
 //Organization Page
 becomeOrganizerPage = function(){
+    //Page Effects
     hideAllPages();
     document.getElementById("buttonOrganization").style.backgroundColor = "rgb(0, 255, 0)";
+    //Display available locations eg.NTU
     document.getElementById("maintext").innerHTML = "Choose Location: <br>"+
     "<div class='selectLocation' id='locationNTU' onclick='displayLocation(\"NTU\")'><u>NTU</u></div>"+
     "Will be updated soon...<br><br>";
@@ -18,9 +20,18 @@ becomeOrganizerPage = function(){
 displayLocation = function(location){
     document.getElementById("subtext1").innerHTML = "";
     switch (location){
+        //NTU Selected
         case "NTU":
+<<<<<<< HEAD
             //Add Food Court 1
             displayCanteens("Food Court 1", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​ <br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 2 <br>Seating capacity: 305<br>");
+=======
+            //North Spine
+            displayCanteens("North Spine", "North S​​pine Food Court<br>Stalls: 19<br>Seating capacity: 1,838<br>");
+            //South Spine
+            displayCanteens("South Spine", "Fine Food<br>Stalls: 14 <br>Seating capacity: 1,030<br>");
+
+>>>>>>> 4e6ed13f975ddc60b917a070110d8571748a68a6
            break;
         default:
             document.getElementById("subtext1").innerHTML = "There is no food court here!!";
@@ -29,14 +40,18 @@ displayLocation = function(location){
     }
 }
 
+//Display Canteens in boxes
 displayCanteens = function(name, txt){
     //Note that name refers store name and txt is the store's flavor text
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>"+
-    "<img src='img/"+name+".jpg' alt='Food Court 1' onclick=\"displayStores('"+name+"')\"></div>"+txt+"</div>";
+    "<img src='img/"+name+".jpg' alt='"+name+"' onclick=\"displayStores('"+name+"')\"></div>"+txt+"</div>";
 }
 
+//Display Stores in boxes
 displayStores = function(canteenName){
+    //Save Selected Canteen Name
     canteen = canteenName;
+    //Check boxes for Halal, Veg and Allergies
     document.getElementById("subtext1").innerHTML = 
     "<form action='/action_page.php'>"+
     "<input type='checkbox' id='halalCheck' name='Halal'>"+
@@ -46,63 +61,87 @@ displayStores = function(canteenName){
     "<input type='checkbox' id='allergyCheck' name='Allergies'>"+
     "<label for='allergyCheck'> Allergies</label><br><br>"+
     "<input type='submit' value='Search'></form>";
+
     var noOfStores = 0; //Number of stores in a canteen
-    switch (canteenName){
-        case "Food Court 1":
-            noOfStores = 2;
-            for (var i =1;i<=noOfStores;i++){
-                txt = "<div id='storeDescription'>No Description</div>"+
+    //Default txt
+    txt = "<div id='storeDescription'>No Description</div>"+
                 "Food Type: <div id='foodType'>None</div>"+
                 "Availability: <div id='foodAvailability'>V</div>"
-                displayIndividualStore(canteen,"Stall "+i,txt);
-            }
+    //Check which Canteen it is
+    switch (canteen){
+        //Display Stores in North Spine
+        case "North Spine":
+            noOfStores = 2;
+            displayIndividualStore("Nicholas Club",txt);
+            displayIndividualStore("Anson & Friends",txt);
+            break;
+        //By Default display South Spine
+        default:
+            noOfStores = 2;
+            displayIndividualStore("Wonder Man",txt);
+            displayIndividualStore("Captain Singapore",txt);
             break;
     }
 }
 
-displayIndividualStore = function(canteenName, stallName,txt){
+//Display each store in boxes
+displayIndividualStore = function(stallName,txt){
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>"+
-    "<img src='img/"+canteenName+" "+stallName+".jpg' alt='Stall Img' width='200' height='170' onclick=\"displayFood('"+canteenName+","+stallName+"')\"></div>"+txt+"</div>";
-    if (canteenName=="Food Court 1"){
+    "<img src='img/"+stallName+".jpg' alt='Stall Img' width='200' height='170' onclick=\"displayFood('"+stallName+"')\"></div>"+txt+"</div>";
+        //Check stallName and print accordingly
         switch(stallName){
-            case "Stall 1":
-                document.getElementById("storeDescription").innerHTML = "Burger MASTER";
+            case "Anson & Friends":
+                document.getElementById("storeDescription").innerHTML = "Friends ahh";
                 document.getElementById("foodType").innerHTML = "Halal";
                 break;
-            case "Stall 2":
+            case "Nicholas Club":
                 document.getElementById("storeDescription").innerHTML = "Nicholas Club";
                 document.getElementById("foodAvailability").innerHTML = "X";
                 break;
+            case "Wonder Man":
+                    document.getElementById("storeDescription").innerHTML = "WW";
+                    document.getElementById("foodType").innerHTML = "Vegetarian";
+                    break;
+            case "Captain Singapore":
+                    document.getElementById("storeDescription").innerHTML = "Majulah Ahoy";
+                    document.getElementById("foodAvailability").innerHTML = "X";
+                    break;
         }
-    }
 }
 
-displayFood = function(canteen,stallName){
+//Display Food available in each store
+displayFood = function(stallName){
+    //save the visited store
     store = stallName;
-    //Reset
+    //Reset global variables
     rice = false;
     meat = false;
     soup = false;
     veggie = false;
 
-    //Code
+    //Display Left Over Food Available in check boxes
     document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
     document.getElementById("subtext1").innerHTML +=
-    "<form action='/action_page.php'>"+
+    //Display Rice
     "<input type='checkbox' id='riceCheck' name='Rice'>"+
     "<label for='riceCheck'> Rice <br>Estimated Amount: 5kg</label><br><br>"+
+    //Display Vegetables
     "<input type='checkbox' id='vegCheck' name='Vegetables'>"+
     "<label for='vegeCheck'> Vegetables <br>Estimated Amount: 10kg</label><br><br>"+
+    //Display Meat
     "<input type='checkbox' id='meatCheck' name='Meat'>"+
     "<label for='meatCheck'> Meat <br>Estimated Amount: 7kg</label><br><br>"+
+    //Display Soup
     "<input type='checkbox' id='soupCheck' name='Soup'>"+
     "<label for='soupCheck'> Soup <br>Estimated Amount: 2kg</label><br><br>"+
-    "<input type='submit' value='Search' onclick='organizationVerificationPage()'></form>";
+    //The ones that are checked will be available for input later
+    "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
 
 }
 
 organizationVerificationPage = function(){
     //Initialization
+    //Check which variables are checked
     rice = document.getElementById("riceCheck").checked;
     veggie = document.getElementById("vegCheck").checked;
     meat = document.getElementById("meatCheck").checked;
@@ -129,8 +168,9 @@ organizationVerificationPage = function(){
 }
 
 viewConfirmPage = function(){
-    //Var
+    //Remember Organization Name
     var organizationName = document.getElementById("organizationName").value;
+    //Create list of food submitted
     var foodOrdered = "";
     if (rice)
         foodOrdered += "<b>Rice:</b> "+document.getElementById("rice").value+"kg<br>";
@@ -141,7 +181,7 @@ viewConfirmPage = function(){
     if (soup)
          foodOrdered += "<b>Soup:</b> "+document.getElementById("soup").value+"kg<br>";
     
-    //Print Confirmations
+    //Print Confirmations Page
     document.getElementById("subtext1").innerHTML = "";
     document.getElementById("maintext").innerHTML = "<div class = 'centralizeText'>"+
     "<h1><u><b>Confirmation Page</u></b></h1>"+
