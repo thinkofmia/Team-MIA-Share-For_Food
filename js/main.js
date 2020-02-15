@@ -4,7 +4,7 @@ showHomePage = function(){
     //document.getElementById("homePage").style.display = "inline-block";
     document.getElementById("maintext").innerHTML = 
     "<div class = imgWrapper>"+
-    "<img src='img/Evee.jpg' alt='Share for Food Poster'>"+
+    "<img src='img/Evee.jpg' alt='Share for Food Poster' width='200' height='200'>"+
     "</div>";
 
 }
