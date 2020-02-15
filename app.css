@@ -2,7 +2,9 @@
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	/*width: 920px;*/
+    position: relative;
+    left: 10%;
+    width: 90%;
     background-size: cover;
 }
 
