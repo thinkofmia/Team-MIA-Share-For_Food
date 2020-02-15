@@ -49,13 +49,14 @@ displayStores = function (canteenName) {
     canteen = canteenName;
     //Check boxes for Halal, Veg and Allergies
     document.getElementById("subtext1").innerHTML =
+        "<form>"+
         "<input type='checkbox' id='halalCheck' name='Halal'>" +
-        "<label for='halalCheck'> Halal</label><br>" +
+        "<label for='halalCheck'> Halal</label> " +
         "<input type='checkbox' id='vegCheck' name='Vegetarian'>" +
-        "<label for='vegCheck'> Vegetarian</label><br>" +
+        "<label for='vegCheck'> Vegetarian</label> " +
         "<input type='checkbox' id='allergyCheck' name='Allergies'>" +
-        "<label for='allergyCheck'> Allergies</label><br><br>" +
-        "<input type='submit' value='Search'>";
+        "<label for='allergyCheck'> Allergies</label> " +
+        "<input type='submit' value='Search'></form>";
 
     var noOfStores = 0; //Number of stores in a canteen
 
