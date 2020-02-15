@@ -78,7 +78,7 @@ body {
 
 .homeButtonRow {
 	margin-top: 2%;
-	left: 26.1%;
+	left: 31.5%;
 	position: relative;
 	display: inline-block;
 	
@@ -117,5 +117,5 @@ body {
 
 #maintext{
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 0%;
 }
