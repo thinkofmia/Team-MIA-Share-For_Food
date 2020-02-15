@@ -4,18 +4,18 @@ body {
 }
 /*Logo*/
 #logo{
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
+	top: 0%;
 
 }
 
 /* Wrapper */
 #wrapper {
+	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-	top: 80%;
-    left: 0%;
     width: 100%;
 	background-size: cover;
 }
@@ -68,13 +68,8 @@ body {
 	margin-bottom: 2px;
 }
 
-.buttonrow {
-	padding-bottom: 40px;
-	
-}
 
 .homeButtonRow {
-    padding-bottom: 40px;
     left: 33%;
 	position: relative;
 	display: inline-block;
@@ -86,7 +81,8 @@ body {
     position: absolute;
     right: 2px;
     top: 2px;
-    font-size: 20px;
+	font-size: 20px;
+	padding-bottom: 10%;
 }
 .centralizeText{
 	text-align: center;
