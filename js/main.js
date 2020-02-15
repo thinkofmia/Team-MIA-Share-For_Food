@@ -7,6 +7,13 @@ storeLastDisplayText = function(id){
 getLastDisplayText = function(){
     return lastDisplayText;
 }
+//Contact US Page
+showContactUsPage = function(){
+    hideAllPages();
+    document.getElementById("maintext").innerHTML = "<h1>Contact Us</h1>"+
+    "<h2>We welcome any comments, suggestions and feedbacks.</h2>"+
+    "Please do drop us an email at shareforfood@mia.com.sg or call us at +65 8765 4321 for any enquiries.";
+}
 
 //Home Page
 showHomePage = function(){
