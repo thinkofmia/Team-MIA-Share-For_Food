@@ -36,7 +36,7 @@ checkStore = function () {
     //For Debug
     console.log(foodStore.selectedCanteen);
     //Ask store
-    document.getElementById("subtext1").innerHTML = "Choose your store: <select id='selectedStore'>"+
+    document.getElementById("subtext1").innerHTML = "<br>Choose your store: <select id='selectedStore'>"+
     txt+"</select><br><br>";
     
     //Verification Code
@@ -99,7 +99,8 @@ foodStoreEnd = function () {
             meat: document.getElementById("meat").value,
             rice: document.getElementById("rice").value,
             soup: document.getElementById("soup").value,
-            vegetable: document.getElementById("veg").value
+            vegetable: document.getElementById("veg").value,
+            timeToCollect: document.getElementById("timeToCollect").value
         };
     
         const updates = {};

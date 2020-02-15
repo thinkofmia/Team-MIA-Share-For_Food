@@ -26,7 +26,7 @@ displayLocation = function(location){
             //North Spine
             displayCanteens("North Spine", "North S​​pine Food Court<br>Stalls: 19<br>Seating capacity: 1,838<br>");
             //South Spine
-            displayCanteens("South Spine", "Fine Food<br>Stalls: 14 <br>Seating capacity: 1,030<br>");
+            displayCanteens("South Spine", "Fine Food @ South Spine<br>Stalls: 14 <br>Seating capacity: 1,030<br>");
 
            break;
         default:
