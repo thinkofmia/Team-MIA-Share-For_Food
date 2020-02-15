@@ -68,9 +68,9 @@ body {
 
 .homeButtonRow {
     padding-bottom: 40px;
-    left: 40%;
-    position: relative;
-    display: inline-block;
+    left: 33%;
+	position: relative;
+	display: inline-block;
 	
 }
 
@@ -83,4 +83,19 @@ body {
 }
 #aboutUsText{
 	text-align: center;
+}
+
+.selectLocation{
+	color: #2709ad;
+	cursor: grab;
+}
+
+.store{
+	border: 5px solid black;
+	width: 20%;
+	overflow: hidden;
+}
+.storeImg{
+	width: 100%;
+	object-fit: contain;
 }

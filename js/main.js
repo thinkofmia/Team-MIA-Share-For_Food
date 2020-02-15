@@ -9,6 +9,33 @@ showHomePage = function(){
 
 }
 
+//Organization Page
+becomeOrganizerPage = function(){
+    document.getElementById("maintext").innerHTML = "Choose Location: <br>"+
+    "<div class='selectLocation' id='locationNTU' onclick='displayLocation(\"NTU\")'><u>NTU</u></div>"+
+    "Will be updated soon...<br><br>"+
+    "<div id = 'storeList'></div>";
+}
+displayLocation = function(location){
+    document.getElementById("storeList").innerHTML = "";
+    switch (location){
+        case "NTU":
+            //Add Food Court 1
+            displayStore("Food Court 1.jpg", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​<br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 4 | Seating capacity: 305<br>");
+           
+           break;
+        default:
+            document.getElementById("storeList").innerHTML = "There is no food court here!!";
+            break;
+    
+    }
+}
+
+displayStore = function(img, txt){
+    document.getElementById("storeList").innerHTML += "<div class='store'><div class='storeImg'>"+
+    "<img src='img/"+img+"' alt='Food Court 1'></div>"+txt+"</div>";
+}
+
 //List of Organization Page
 showOrganizationListPage = function(){
     //hideAllPages();
