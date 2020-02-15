@@ -1,5 +1,5 @@
 # Formal problem statement (200 words)
-Climate Action (SDG 13)
+## Climate Action (SDG 13)
 
 ## Definition of the target
 Climate change is a change in the common weather found in a location, which can be measured as a difference in how much rain a place usually gets in a year or a change in a location's normal temperature for a month or season.
