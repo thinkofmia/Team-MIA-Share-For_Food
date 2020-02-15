@@ -6,4 +6,7 @@ getDateTime = function(){
     if (min<10)minStr = "0"+min;
     else minStr = min;
     document.getElementById("dateTime").innerHTML = d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+" "+d.getHours()+":"+minStr;
+
+    //Set TimeOut
+    setTimeout(getDateTime, 1000);
 }
