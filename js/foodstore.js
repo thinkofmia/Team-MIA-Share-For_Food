@@ -8,19 +8,19 @@ pickFoodStorePage = function () {
     document.getElementById("subtext1").innerHTML = "";
     document.getElementById("buttonFoodStores").style.backgroundColor = "rgb(0, 255, 0)";
     //Select Canteen
-    document.getElementById("maintext").innerHTML = "Choose your store: ";
-    document.getElementById("maintext").innerHTML += "<select id='selectedSpine'>" +
+    document.getElementById("maintext").innerHTML = "Choose your location: ";
+    document.getElementById("maintext").innerHTML += "<select id='selectedSpine' onchange='checkStore()'>" +
         "<option value='NorthSpine'>North Spine</option>" +
         "<option value='SouthSpine'>South Spine</option>" +
-        "</select><br><br>";
-    //Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' id='checkButton' onclick='checkStore()' '>";
-}
+        "</select>";
+    }
 
 checkStore = function () {
     //Select Store
     var txt = "";
+    //Set Canteen
     foodStore.selectedCanteen = document.getElementById("selectedSpine").value;
+    //
     if (foodStore.selectedCanteen == "NorthSpine") {
         txt = "<option value='ChickenRice'>Chicken Rice</option>" +
             "<option value='MixedVegetable Rice'>Mixed Vegetable Rice</option>" +
@@ -32,15 +32,16 @@ checkStore = function () {
             "<option value='NasiBriyani'>Nasi Briyani</option>";
             
     }
+    //For Debug
     console.log(foodStore.selectedCanteen);
+    //Ask store
     document.getElementById("subtext1").innerHTML = "Choose your store: <select id='selectedStore'>"+
     txt+"</select><br><br>";
     
-    
     //Verification Code
-    document.getElementById("maintext").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
+    document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
     //Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' id='submitButton' onclick='selectStore()' '></form>";
+    document.getElementById("subtext1").innerHTML += "<input type='submit' id='submitButton' onclick='selectStore()' '></form>";
 }
 
 selectStore = function () {
