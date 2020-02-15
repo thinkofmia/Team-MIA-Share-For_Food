@@ -78,7 +78,7 @@ body {
 
 .homeButtonRow {
 	margin-top: 2%;
-	left: 26.1%;
+	text-align: center;
 	position: relative;
 	display: inline-block;
 	
@@ -113,4 +113,9 @@ body {
 	height: "170px";
 	cursor: grab;
 	object-fit: contain;
+}
+
+#maintext{
+	text-align: center;
+	margin-top: 5px;
 }
