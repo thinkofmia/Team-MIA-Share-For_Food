@@ -40,8 +40,8 @@ displayStores = function(canteenName){
         case "Food Court 1":
             noOfStores = 2;
             for (var i =1;i<=noOfStores;i++){
-                txt = "<div id='storeDescription'>No Description</div><br>"+
-                "Food Type: <div id='foodType'>None</div><br>"+
+                txt = "<div id='storeDescription'>No Description</div>"+
+                "Food Type: <div id='foodType'>None</div>"+
                 "Availability: <div id='foodAvailability'>✔️</div>"
                 displayIndividualStore(canteenName,"Stall "+i,txt);
             }
@@ -51,7 +51,7 @@ displayStores = function(canteenName){
 
 displayIndividualStore = function(canteenName, stallName,txt){
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>"+
-    "<img src='img/"+canteenName+" "+stallName+".jpg' alt='Stall Img' onclick=\"displayFood('"+canteenName+" "+stallName+"')\"></div>"+txt+"</div>";
+    "<img src='img/"+canteenName+" "+stallName+".jpg' alt='Stall Img' width='200' height='170' onclick=\"displayFood('"+canteenName+" "+stallName+"')\"></div>"+txt+"</div>";
     if (canteenName=="Food Court 1"){
         switch(stallName){
             case "Stall 1":
