@@ -60,6 +60,9 @@ showAboutUsPage = function(){
 //Hide all Pages (Not needed)
 hideAllPages = function(){
     document.getElementById("subtext1").innerHTML = "";
+    document.getElementById("maintext").innerHTML = "";
+    document.getElementById("buttonOrganization").style.backgroundColor = "rgb(252, 189, 95)";
+    document.getElementById("buttonFoodStores").style.backgroundColor = "rgb(252, 189, 95)";
     //document.getElementById("homePage").style.display = "none";
     //document.getElementById("aboutUsPage").style.display = "none";
     //document.getElementById("organizationListPage").style.display = "none";

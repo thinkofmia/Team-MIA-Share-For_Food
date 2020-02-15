@@ -15,8 +15,8 @@
                 <div class="buttonrow">
                     <a><div class="button" id="buttonMain" onclick="showHomePage()">Main Menu</div></a>
                     <a><div class="button" id="buttonAboutUs" onclick="showAboutUsPage()">About Us</div></a>
-                    <a><div class="button" id="buttonStores" onclick="showAboutUsPage()">Lists of Organization</div></a>
-                    <a><div class="button" id="buttonOrganization" onclick="showAboutUsPage()">List of Food Store</div></a>
+                    <a><div class="button" id="buttonListOfOrganization" onclick="showAboutUsPage()">Lists of Organization</div></a>
+                    <a><div class="button" id="buttonListOfFoodStores" onclick="showAboutUsPage()">List of Food Store</div></a>
                     <a><div class="button" id="buttonHelp" onclick="showAboutUsPage()">Help</div></a>
                     <a><div class="button" id="buttonContactUs" onclick="showAboutUsPage()">Contact Us</div></a>
                 </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="homeButtonRow">
             <a><div class="homeButton" id="buttonOrganization" onclick="becomeOrganizerPage()">Organization<br><i>Click Here</i></div></a>
-            <a><div class="homeButton" id="buttonFoodStores" onclick="showAboutUsPage()">Food Stores<br><i>Click Here</i></div></a>
+            <a><div class="homeButton" id="buttonFoodStores" onclick="pickFoodStorePage()">Food Stores<br><i>Click Here</i></div></a>
         </div>
     </header>
 
@@ -37,6 +37,7 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="js/organization.js"></script>
+<script type="text/javascript" src="js/foodstore.js"></script>
 <script>
     showHomePage();
     getDateTime();  

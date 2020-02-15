@@ -8,6 +8,8 @@ var store = "";
 
 //Organization Page
 becomeOrganizerPage = function(){
+    hideAllPages();
+    document.getElementById("buttonOrganization").style.backgroundColor = "rgb(0, 255, 0)";
     document.getElementById("maintext").innerHTML = "Choose Location: <br>"+
     "<div class='selectLocation' id='locationNTU' onclick='displayLocation(\"NTU\")'><u>NTU</u></div>"+
     "Will be updated soon...<br><br>";
