@@ -92,10 +92,14 @@ body {
 
 .store{
 	border: 5px solid black;
-	width: 20%;
+	height: 300px;
+	width: 200px;
 	overflow: hidden;
+	display: inline-block;
 }
 .storeImg{
-	width: 100%;
+	max-width: 50%;
+	max-height: 50%;
+	cursor: grab;
 	object-fit: contain;
 }
