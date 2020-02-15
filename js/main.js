@@ -1,3 +1,13 @@
+//Special Variables
+var lastDisplayText = "";
+storeLastDisplayText = function(id){
+    lastDisplayText = document.getElementById(id).innerHTML;
+}
+
+getLastDisplayText = function(){
+    return lastDisplayText;
+}
+
 //Home Page
 showHomePage = function(){
     hideAllPages();

@@ -10,7 +10,7 @@ displayLocation = function(location){
     switch (location){
         case "NTU":
             //Add Food Court 1
-            displayCanteens("Food Court 1", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​<br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 4 | Seating capacity: 305<br>");
+            displayCanteens("Food Court 1", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​<br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 2 <br>Seating capacity: 305<br>");
            break;
         default:
             document.getElementById("subtext1").innerHTML = "There is no food court here!!";
@@ -42,7 +42,7 @@ displayStores = function(canteenName){
             for (var i =1;i<=noOfStores;i++){
                 txt = "<div id='storeDescription'>No Description</div>"+
                 "Food Type: <div id='foodType'>None</div>"+
-                "Availability: <div id='foodAvailability'>✔️</div>"
+                "Availability: <div id='foodAvailability'>V</div>"
                 displayIndividualStore(canteenName,"Stall "+i,txt);
             }
             break;
@@ -60,7 +60,7 @@ displayIndividualStore = function(canteenName, stallName,txt){
                 break;
             case "Stall 2":
                 document.getElementById("storeDescription").innerHTML = "Nicholas Club";
-                document.getElementById("foodAvailability").innerHTML = "❌";
+                document.getElementById("foodAvailability").innerHTML = "X";
                 break;
         }
     }
