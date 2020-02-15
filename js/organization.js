@@ -17,6 +17,7 @@ becomeOrganizerPage = function(){
     "Will be updated soon...<br><br>";
 }
 
+//Display the location of the selected Campus
 displayLocation = function(location){
     document.getElementById("subtext1").innerHTML = "";
     switch (location){
