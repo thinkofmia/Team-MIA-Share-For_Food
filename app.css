@@ -98,16 +98,17 @@ body {
 }
 
 .store{
-	border: 5px solid black;
-	height: 400px;
-	width: 200px;
+	margin-left: 20%;
+	border: 3px solid black;
+	height: 300px;
+	width: 260px;
 	overflow: hidden;
 	display: inline-block;
-	text-align: center;
+
 }
 .storeImg{
 	width: "200px"; 
-	height: "170px";
+	height: "160px";
 	cursor: grab;
 	object-fit: contain;
 }
