@@ -81,7 +81,7 @@ body {
     top: 2px;
     font-size: 20px;
 }
-#aboutUsText{
+.centralizeText{
 	text-align: center;
 }
 
@@ -92,7 +92,7 @@ body {
 
 .store{
 	border: 5px solid black;
-	height: 300px;
+	height: 400px;
 	width: 200px;
 	overflow: hidden;
 	display: inline-block;

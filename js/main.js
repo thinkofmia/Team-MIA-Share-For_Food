@@ -34,7 +34,7 @@ showAboutUsPage = function(){
     hideAllPages();
     //document.getElementById("aboutUsPage").style.display = "inline-block";
     document.getElementById("maintext").innerHTML = 
-    "<div id='aboutUsText'>"+
+    "<div class= 'centralizeText' id='aboutUsText'>"+
     "<h1>Team MIA</h1>"+
     "Members of Team MIA: Fremont, Anson, Nicholas<br><br>"+
     "<b> Formal problem statement </b><br>"+

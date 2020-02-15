@@ -1,3 +1,11 @@
+//Variables
+var rice = 'off';
+var veggie = 'off';
+var soup = 'off';
+var meat = 'off';
+var canteen = "";
+var store = "";
+
 //Organization Page
 becomeOrganizerPage = function(){
     document.getElementById("maintext").innerHTML = "Choose Location: <br>"+
@@ -26,6 +34,7 @@ displayCanteens = function(name, txt){
 }
 
 displayStores = function(canteenName){
+    canteen = canteenName;
     document.getElementById("subtext1").innerHTML = 
     "<form action='/action_page.php'>"+
     "<input type='checkbox' id='halalCheck' name='Halal'>"+
@@ -43,7 +52,7 @@ displayStores = function(canteenName){
                 txt = "<div id='storeDescription'>No Description</div>"+
                 "Food Type: <div id='foodType'>None</div>"+
                 "Availability: <div id='foodAvailability'>V</div>"
-                displayIndividualStore(canteenName,"Stall "+i,txt);
+                displayIndividualStore(canteen,"Stall "+i,txt);
             }
             break;
     }
@@ -51,7 +60,7 @@ displayStores = function(canteenName){
 
 displayIndividualStore = function(canteenName, stallName,txt){
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>"+
-    "<img src='img/"+canteenName+" "+stallName+".jpg' alt='Stall Img' width='200' height='170' onclick=\"displayFood('"+canteenName+" "+stallName+"')\"></div>"+txt+"</div>";
+    "<img src='img/"+canteenName+" "+stallName+".jpg' alt='Stall Img' width='200' height='170' onclick=\"displayFood('"+canteenName+","+stallName+"')\"></div>"+txt+"</div>";
     if (canteenName=="Food Court 1"){
         switch(stallName){
             case "Stall 1":
@@ -64,4 +73,82 @@ displayIndividualStore = function(canteenName, stallName,txt){
                 break;
         }
     }
+}
+
+displayFood = function(canteen,stallName){
+    store = stallName;
+    //Reset
+    rice = 'off';
+    meat = 'off';
+    soup = 'off';
+    veggie = 'off';
+
+    //Code
+    document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
+    document.getElementById("subtext1").innerHTML +=
+    "<form action='/action_page.php'>"+
+    "<input type='checkbox' id='riceCheck' name='Rice'>"+
+    "<label for='riceCheck'> Rice <br>Estimated Amount: 5kg</label><br><br>"+
+    "<input type='checkbox' id='vegCheck' name='Vegetables'>"+
+    "<label for='vegeCheck'> Vegetables <br>Estimated Amount: 10kg</label><br><br>"+
+    "<input type='checkbox' id='meatCheck' name='Meat'>"+
+    "<label for='meatCheck'> Meat <br>Estimated Amount: 7kg</label><br><br>"+
+    "<input type='checkbox' id='soupCheck' name='Soup'>"+
+    "<label for='soupCheck'> Soup <br>Estimated Amount: 2kg</label><br><br>"+
+    "<input type='submit' value='Search' onclick='organizationVerificationPage()'></form>";
+
+}
+
+organizationVerificationPage = function(){
+    //Initialization
+    rice = document.getElementById("riceCheck").value;
+    veggie = document.getElementById("vegCheck").value;
+    meat = document.getElementById("meatCheck").value;
+    soup = document.getElementById("soupCheck").value;
+    
+    //Display Checkout
+    document.getElementById("subtext1").innerHTML = "<form action='/action_page.php'>";
+    //Display organization input box and verification Passcode
+    document.getElementById("subtext1").innerHTML +="<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>"+
+    "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='Black Lightning is back'></input><br>";
+    //Display food selected
+    if (rice=='on')
+        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value=5 min=0 max=5></input>kg<br>";
+    if (veggie=='on')
+        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg' value=5 min=0 max=10></input>kg<br>";
+    if (meat=='on')
+        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat' value=5 min=0 max=7></input>kg<br>";
+    if (soup=='on')
+        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup' value=0 min=0 max=2></input>kg<br>";
+    //Display Time to collect and remarks
+    document.getElementById("subtext1").innerHTML +="<b>Collection Time:</b> <input type='text' id='collectionTime' value='Input time to collect'></input><br>"+
+    "<b>Remarks:</b> <input type='text' id='remarks' value='Input remarks'></input><br>";
+    document.getElementById("subtext1").innerHTML += "<input type='submit' value='Next' onclick='viewConfirmPage()' '></form>";
+}
+
+viewConfirmPage = function(){
+    //Var
+    var organizationName = document.getElementById("organizationName").value;
+    var foodOrdered = "";
+    if (rice=='on')
+        foodOrdered += "<b>Rice:</b> "+document.getElementById("rice").value+"kg<br>";
+    if (veggie=='on')
+        foodOrdered += "<b>Vegetables:</b> "+document.getElementById("veg").value+"kg<br>";
+    if (meat=='on')
+        foodOrdered += "<b>Meat:</b> "+document.getElementById("meat").value+"kg<br>";
+    if (soup=='on')
+         foodOrdered += "<b>Soup:</b> "+document.getElementById("soup").value+"kg<br>";
+    
+    //Print Confirmations
+    document.getElementById("subtext1").innerHTML = "";
+    document.getElementById("maintext").innerHTML = "<div class = 'centralizeText'>"+
+    "<h1><u><b>Confirmation Page</u></b></h1>"+
+    "Successfully ordered!<br>"+
+    "ref# "+Math.random()*100000+"<br>"+
+    "Organization: "+organizationName+"<br>"+
+    "Food Ordered: <br>"+foodOrdered+
+    "At "+canteen+", "+store+"<br>"+
+    "<h1>THANK YOU!</h1>";
+    
+
 }
