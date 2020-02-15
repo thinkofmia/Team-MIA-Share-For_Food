@@ -20,7 +20,7 @@ displayLocation = function(location){
     switch (location){
         case "NTU":
             //Add Food Court 1
-            displayCanteens("Food Court 1", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​<br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 2 <br>Seating capacity: 305<br>");
+            displayCanteens("Food Court 1", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​ <br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 2 <br>Seating capacity: 305<br>");
            break;
         default:
             document.getElementById("subtext1").innerHTML = "There is no food court here!!";
