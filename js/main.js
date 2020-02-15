@@ -1,16 +1,30 @@
 //Home Page
 showHomePage = function(){
-    hideAllPages();
-    document.getElementById("homePage").style.display = "inline-block";
-    document.getElementById("maintext").innerHTML = "Fake Text";
+    //hideAllPages();
+    //document.getElementById("homePage").style.display = "inline-block";
+    document.getElementById("maintext").innerHTML = 
+    "<div class = imgWrapper>"+
+    "<img src='img/Evee.jpg' alt='Share for Food Poster'>"+
+    "</div>";
 
+}
+
+//List of Organization Page
+showOrganizationListPage = function(){
+    //hideAllPages();
+    //document.getElementById("homePage").style.display = "inline-block";
+    document.getElementById("maintext").innerHTML = 
+    "<div class = imgWrapper>"+
+    "<img src='img/charmander.jpg' alt='Share for Food Poster'>"+
+    "</div>";
 }
 
 //About Us Page
 showAboutUsPage = function(){
-    hideAllPages();
-    document.getElementById("aboutUsPage").style.display = "inline-block";
-    document.getElementById("aboutUsText").innerHTML = 
+    //hideAllPages();
+    //document.getElementById("aboutUsPage").style.display = "inline-block";
+    document.getElementById("maintext").innerHTML = 
+    "<div id='aboutUsText'>"+
     "<h1>Team MIA</h1>"+
     "Members of Team MIA: Fremont, Anson, Nicholas<br><br>"+
     "<b> Formal problem statement </b><br>"+
@@ -28,10 +42,12 @@ showAboutUsPage = function(){
     
     "<b>Sharing to the needy people organizations</b><br>"+ 
     "- Alias with the organizations for the food collection<br>"+
-    "- Include expiry dates for the collected food<br>";
+    "- Include expiry dates for the collected food<br>"+
+    "</div>";
+    ;
 }
 
-//Hide all Pages
+//Hide all Pages (Not needed)
 hideAllPages = function(){
     document.getElementById("homePage").style.display = "none";
     document.getElementById("aboutUsPage").style.display = "none";
