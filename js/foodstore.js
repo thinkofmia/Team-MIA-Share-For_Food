@@ -8,15 +8,18 @@ pickFoodStorePage = function(){
     //Select Store
     document.getElementById("maintext").innerHTML = "Choose your store: ";
     document.getElementById("maintext").innerHTML += "<select id='selectedStore'>"+
-        "<option value='Nicholas Club'>Nicholas Club</option>"+
-        "<option value='Anson & Friends'>Anson & Friends</option>"+
-        "<option value='Wonder Man'>Wonder Man</option>"+
-        "<option value='Captain Singapore'>Captain Singapore</option>"+
+        "<option value='Chicken Rice'>Chicken Rice</option>"+
+        "<option value='Mixed Vegetable Rice'>Mixed Vegetable Rice</option>"+
+        "<option value='Vegetarian'>Vegetarian</option>"+
+        "<option value='Duck Rice'>Duck Rice</option>"+
+        "<option value='Nasi Briyani'>Nasi Briyani</option>"+
         "</select><br><br>";
     //Verification Code
     document.getElementById("maintext").innerHTML +="<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
     //Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' onclick='selectStore()' '></form>";
+    document.getElementById("maintext").innerHTML += "<input type='submit' id='submitButton' onclick='selectStore()' '></form>";
+
+
 }
 
 selectStore = function(){
@@ -61,3 +64,4 @@ foodStoreEnd = function(){
         document.getElementById("maintext").innerHTML = "<h1>Thank You "+foodStore.selected+" for donating: <br></h1>"+foodDelievered;
     }
 }
+
