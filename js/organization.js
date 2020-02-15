@@ -22,16 +22,11 @@ displayLocation = function(location){
     switch (location){
         //NTU Selected
         case "NTU":
-<<<<<<< HEAD
-            //Add Food Court 1
-            displayCanteens("Food Court 1", "Food Court 1<br>50 Nanyang Avenue Singapore 639798​ <br>Hall 1<br>Daily: 7am to 9pm<br>Stalls: 2 <br>Seating capacity: 305<br>");
-=======
             //North Spine
             displayCanteens("North Spine", "North S​​pine Food Court<br>Stalls: 19<br>Seating capacity: 1,838<br>");
             //South Spine
             displayCanteens("South Spine", "Fine Food<br>Stalls: 14 <br>Seating capacity: 1,030<br>");
 
->>>>>>> 4e6ed13f975ddc60b917a070110d8571748a68a6
            break;
         default:
             document.getElementById("subtext1").innerHTML = "There is no food court here!!";
