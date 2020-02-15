@@ -4,13 +4,21 @@
 ## Definition of the target
 Climate change is a change in the common weather found in a location, which can be measured as a difference in how much rain a place usually gets in a year or a change in a location's normal temperature for a month or season.
 
-Disposable cups are forms of tableware and disposable food packaging, which include paper cups, plastic cups and foam cups. The production of paper cups adds to water pollution (when chemicals infiltrate the waterways), the production of foam cups brings in air pollution (when pentane is released into the air) and the plastic-coated paper cups chips in the plastic pollution problem (when disposed as waste). 
+Leftover food is defined as consumables that remain unused or unconsumed.
 
 Greenhouse Emission refers to the emission of greenhouse-affective gases into the Earth's atmosphere.
 
 ## Brief Description
-Half a trillion disposable cups are being manufactured annually, consuming lots of energy and producing tons of greenhouse emission.
+In 2018, the total food wastage generated is up to 763,100 tonnes in Singapore. (See also: https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/food-waste-management) Food waste accounts for about 10 per cent of the total waste generated in Singapore and those that are disposed of go the waste-to-energy plants for incineration.
+
+Our submission aims to reduce the amount of food wastage in NTU canteens/restaurants by collecting leftover food and distributing them accordingly to the relevant needy people organizations.
 
 ## Outline of the approach.
--Collection of the left out food from canteen/restaurant stalls<br>
--Sharing to the needy people. 
+### Collection of the left out food from canteen/restaurant stalls
+- Gather a list of stalls involved in the project
+- Setup daily routine of collecting leftover food by their opening hours
+- Check-in system for leftover food
+
+### Sharing to the needy people organizations 
+- Alias with the organizations for the food collection
+- Include expiry dates for the collected food
