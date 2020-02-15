@@ -97,7 +97,8 @@ foodStoreEnd = function () {
             meat: document.getElementById("meat").value,
             rice: document.getElementById("rice").value,
             soup: document.getElementById("soup").value,
-            vegetable: document.getElementById("veg").value
+            vegetable: document.getElementById("veg").value,
+            timeToCollect: document.getElementById("timeToCollect").value
         };
     
         const updates = {};
