@@ -64,15 +64,15 @@ displayStores = function (canteenName) {
         //Display Stores in North Spine
         case "North Spine":
             noOfStores = 3;
-            displayIndividualStore("Nicholas Club");
-            displayIndividualStore("Anson & Friends");
-            displayIndividualStore("Morgan J Freemont");
+            displayIndividualStore("Chicken Rice");
+            displayIndividualStore("Mixed Vegetable Rice");
+            displayIndividualStore("Vegetarian");
             break;
         //By Default display South Spine
         default:
             noOfStores = 2;
-            displayIndividualStore("Wonder Man");
-            displayIndividualStore("Captain Singapore");
+            displayIndividualStore("Duck Rice");
+            displayIndividualStore("Nasi Briyani");
             break;
     }
 }
@@ -87,29 +87,29 @@ displayIndividualStore = function (stallName) {
         "<img src='img/" + stallName + ".jpg' alt='Stall Img' width='290' height='200' onclick=\"displayFood('" + stallName + "')\"></div>" + txt + "</div>";
     //Check stallName and print accordingly
     switch (stallName) {
-        case "Anson & Friends":
-            document.getElementById("storeDescription" + stallName).innerHTML = "AAA";
+        case "Chicken Rice":
+            document.getElementById("storeDescription" + stallName).innerHTML = "Chicken Rice";
             document.getElementById("foodType" + stallName).innerHTML = "Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Nicholas Club":
-            document.getElementById("storeDescription" + stallName).innerHTML = "Nicholas Club";
+        case "Mixed Vegetable Rice":
+            document.getElementById("storeDescription" + stallName).innerHTML = "Mixed Vegetable Rice";
             document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Wonder Man":
-            document.getElementById("storeDescription" + stallName).innerHTML = "WW";
+        case "Vegetarian":
+            document.getElementById("storeDescription" + stallName).innerHTML = "Vegetarian";
             document.getElementById("foodType" + stallName).innerHTML = "Vegetarian";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Captain Singapore":
-            document.getElementById("storeDescription" + stallName).innerHTML = "Majulah Ahoy";
+        case "Duck Rice":
+            document.getElementById("storeDescription" + stallName).innerHTML = "Duck Rice";
             document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Morgan J Freemont":
-            document.getElementById("storeDescription" + stallName).innerHTML = "Morgan J Freemont";
-            document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
+        case "Nasi Briyani":
+            document.getElementById("storeDescription" + stallName).innerHTML = "Nasi Briyani";
+            document.getElementById("foodType" + stallName).innerHTML = "Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
     }

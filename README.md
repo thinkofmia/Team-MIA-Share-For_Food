@@ -10,3 +10,9 @@ Submission for 24hackathon (15th-16th Feb)
 
 =============
 
+Source:
+https://www.healthhub.sg/live-healthy/1517/chicken-rice
+https://lessonsgowhere.com.sg/cooking-classes/chicken-nasi-briyani-by-celebrity-chef-devagi-sanmugan
+https://eatbook.sg/braised-duck-rice/
+http://www.morethanveggies.sg/events/vegan-malay-food-sapao/
+https://aromacookery.com/2008/03/01/economic-rice-dinner-at-clementi/
