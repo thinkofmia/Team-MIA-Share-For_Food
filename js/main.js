@@ -43,7 +43,7 @@ showAboutUsPage = function(){
     document.getElementById("maintext").innerHTML = 
     "<div class= 'centralizeText' id='aboutUsText'>"+
     "<h1>Team MIA</h1>"+
-    "Members of Team MIA: Fremont, Anson, Nicholas<br><br>"+
+    "Members of Team MIA: Fre<b>M</b>ont, N<b>I</b>cholas, <b>A</b>nson<br><br>"+
     "<b> Formal problem statement </b><br>"+
     "<b> Definition of the target</b><br>"+
     "Climate change is a change in the common weather found in a location, which can be measured as a difference in how much rain a place usually gets in a year or a change in a location's normal temperature for a month or season. "+
