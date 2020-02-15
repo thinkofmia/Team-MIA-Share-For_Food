@@ -3,7 +3,7 @@ var lastDisplayText = "";
 storeLastDisplayText = function(id){
     lastDisplayText = document.getElementById(id).innerHTML;
 }
-
+//Hallo Anson
 getLastDisplayText = function(){
     return lastDisplayText;
 }
