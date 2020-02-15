@@ -74,9 +74,9 @@ setFood = function () {
         "<b>Time to Collect:</b> <input type='text' id='timeToCollect' value = "+timeToCollect+"></input><br>";
 
         //Display Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' onclick='foodStoreEnd()' '>";
-    });
-        
+    document.getElementById("maintext").innerHTML += "<input type='submit' id = 'updateDatabase' onclick='foodStoreEnd()' '>";
+    
+});
     
 }
 
@@ -92,7 +92,18 @@ foodStoreEnd = function () {
 
     //Print what is donated
     else {
-
+        
+        const newData = {
+            meat: document.getElementById("meat").value,
+            rice: document.getElementById("rice").value,
+            soup: document.getElementById("soup").value,
+            vegetable: document.getElementById("veg").value
+        };
+    
+        const updates = {};
+        updates['canteen/' + foodStore.selectedCanteen + '/'+ foodStore.selected] = newData;
+        console.log(updates);
+        database.ref().update(updates);
 
         
         //Print
