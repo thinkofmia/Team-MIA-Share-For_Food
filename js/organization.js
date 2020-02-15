@@ -107,7 +107,7 @@ displayIndividualStore = function (stallName) {
             document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Morgan J Fremont":
+        case "Morgan J Freemont":
             document.getElementById("storeDescription" + stallName).innerHTML = "Morgan J Freemont";
             document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
