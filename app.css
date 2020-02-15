@@ -43,6 +43,12 @@ body {
     cursor: grab;
 }
 
+#buttoninvisible{
+	background-color: #f0f0fe;
+	width: 100px;
+	height: 50px;
+}
+
 .homeButton {
 	background-color: rgb(252, 189, 95);
 	background-repeat: no-repeat;
@@ -65,12 +71,14 @@ body {
 }
 
 #topbuttonset {
+	margin-top: 8%;
 	margin-bottom: 2px;
 }
 
 
 .homeButtonRow {
-    left: 33%;
+	margin-top: 2%;
+	left: 26.1%;
 	position: relative;
 	display: inline-block;
 	
