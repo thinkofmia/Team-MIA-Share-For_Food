@@ -24,9 +24,9 @@ displayLocation = function(location){
         //NTU Selected
         case "NTU":
             //North Spine
-            displayCanteens("North Spine", "North S​​pine Food Court<br>Stalls: 19<br>Seating capacity: 1,838<br>");
+            displayCanteens("North Spine", "North S​​pine Food Court<br>Stalls: 3<br>Seating capacity: 838<br>");
             //South Spine
-            displayCanteens("South Spine", "Fine Food @ South Spine<br>Stalls: 14 <br>Seating capacity: 1,030<br>");
+            displayCanteens("South Spine", "South Spine Food Court<br>Stalls: 2<br>Seating capacity: 830<br>");
 
            break;
         default:
@@ -49,14 +49,13 @@ displayStores = function(canteenName){
     canteen = canteenName;
     //Check boxes for Halal, Veg and Allergies
     document.getElementById("subtext1").innerHTML = 
-    "<form action='/action_page.php'>"+
     "<input type='checkbox' id='halalCheck' name='Halal'>"+
     "<label for='halalCheck'> Halal</label><br>"+
     "<input type='checkbox' id='vegCheck' name='Vegetarian'>"+
     "<label for='vegCheck'> Vegetarian</label><br>"+
     "<input type='checkbox' id='allergyCheck' name='Allergies'>"+
     "<label for='allergyCheck'> Allergies</label><br><br>"+
-    "<input type='submit' value='Search'></form>";
+    "<input type='submit' value='Search'>";
 
     var noOfStores = 0; //Number of stores in a canteen
     //Default txt
@@ -87,20 +86,24 @@ displayIndividualStore = function(stallName,txt){
         //Check stallName and print accordingly
         switch(stallName){
             case "Anson & Friends":
-                document.getElementById("storeDescription").innerHTML = "Friends ahh";
+                document.getElementById("storeDescription").innerHTML = "AAA";
                 document.getElementById("foodType").innerHTML = "Halal";
+                document.getElementById("foodAvailability").innerHTML = "Yes";
                 break;
             case "Nicholas Club":
                 document.getElementById("storeDescription").innerHTML = "Nicholas Club";
-                document.getElementById("foodAvailability").innerHTML = "X";
+                document.getElementById("foodType").innerHTML = "Non-Halal";
+                document.getElementById("foodAvailability").innerHTML = "Yes";
                 break;
             case "Wonder Man":
                     document.getElementById("storeDescription").innerHTML = "WW";
                     document.getElementById("foodType").innerHTML = "Vegetarian";
+                    document.getElementById("foodAvailability").innerHTML = "Yes";
                     break;
             case "Captain Singapore":
                     document.getElementById("storeDescription").innerHTML = "Majulah Ahoy";
-                    document.getElementById("foodAvailability").innerHTML = "X";
+                    document.getElementById("foodType").innerHTML = "Non-Halal";
+                    document.getElementById("foodAvailability").innerHTML = "Yes";
                     break;
         }
 }
