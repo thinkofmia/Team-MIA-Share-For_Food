@@ -94,7 +94,7 @@ foodStoreEnd = function () {
     //Print what is donated
     else {
 
-        
+
         
         //Print
         if (document.getElementById("rice").value > 0)
@@ -105,7 +105,7 @@ foodStoreEnd = function () {
             foodDelievered += "<b>Meat:</b> " + document.getElementById("meat").value + "kg<br>";
         if (document.getElementById("soup").value > 0)
             foodDelievered += "<b>Soup:</b> " + document.getElementById("soup").value + "kg<br>";
-        document.getElementById("maintext").innerHTML = "<h1>Thank You " + foodStore.selected + " for donating: <br></h1>" + foodDelievered;
+        document.getElementById("maintext").innerHTML = "<h1>Thank you for donating!: <br></h1>" + foodDelievered;
     }
 }
 
