@@ -1,5 +1,7 @@
-# Team-MIA-s-24hackathon
+# Team-MIA-24hackathon
 Submission for 24hackathon (15th-16th Feb)
+
+## Share For Food
 
 #Instructions
 1) Locate a folder in the terminal (Using 'cd')
