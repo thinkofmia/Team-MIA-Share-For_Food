@@ -58,52 +58,53 @@ displayStores = function(canteenName){
     "<input type='submit' value='Search'>";
 
     var noOfStores = 0; //Number of stores in a canteen
-    //Default txt
-    txt = "<div id='storeDescription'>No Description</div>"+
-                "Food Type: <div id='foodType'>None</div>"+
-                "Availability: <div id='foodAvailability'>V</div>"
+    
     //Check which Canteen it is
     switch (canteen){
         //Display Stores in North Spine
         case "North Spine":
             noOfStores = 2;
-            displayIndividualStore("Nicholas Club",txt);
-            displayIndividualStore("Anson & Friends",txt);
+            displayIndividualStore("Nicholas Club");
+            displayIndividualStore("Anson & Friends");
             break;
         //By Default display South Spine
         default:
             noOfStores = 2;
-            displayIndividualStore("Wonder Man",txt);
-            displayIndividualStore("Captain Singapore",txt);
+            displayIndividualStore("Wonder Man");
+            displayIndividualStore("Captain Singapore");
             break;
     }
 }
 
 //Display each store in boxes
-displayIndividualStore = function(stallName,txt){
+displayIndividualStore = function(stallName){
+    //Default txt
+    var txt = "<div id='storeDescription"+stallName+"'>No Description</div>"+
+                "Food Type: <div id='foodType"+stallName+"'>None</div>"+
+                "Availability: <div id='foodAvailability"+stallName+"'>V</div>";
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>"+
     "<img src='img/"+stallName+".jpg' alt='Stall Img' width='290' height='200' onclick=\"displayFood('"+stallName+"')\"></div>"+txt+"</div>";
-        //Check stallName and print accordingly
+    //Check stallName and print accordingly
         switch(stallName){
             case "Anson & Friends":
-                document.getElementById("storeDescription").innerHTML = "AAA";
-                document.getElementById("foodType").innerHTML = "Halal";
-                document.getElementById("foodAvailability").innerHTML = "Yes";
+                document.getElementById("storeDescription"+stallName).innerHTML = "AAA";
+                document.getElementById("foodType"+stallName).innerHTML = "Halal";
+                document.getElementById("foodAvailability"+stallName).innerHTML = "Yes";
                 break;
             case "Nicholas Club":
-                document.getElementById("storeDescription").innerHTML = "Nicholas Club";
-                document.getElementById("foodType").innerHTML = "Non-Halal";
-                document.getElementById("foodAvailability").innerHTML = "Yes";
+                document.getElementById("storeDescription"+stallName).innerHTML = "Nicholas Club";
+                document.getElementById("foodType"+stallName).innerHTML = "Non-Halal";
+                document.getElementById("foodAvailability"+stallName).innerHTML = "Yes";
                 break;
             case "Wonder Man":
-                    document.getElementById("storeDescription").innerHTML = "WW";
-                    document.getElementById("foodType").innerHTML = "Vegetarian";
-                    document.getElementById("foodAvailability").innerHTML = "Yes";
+                    document.getElementById("storeDescription"+stallName).innerHTML = "WW";
+                    document.getElementById("foodType"+stallName).innerHTML = "Vegetarian";
+                    document.getElementById("foodAvailability"+stallName).innerHTML = "Yes";
                     break;
             case "Captain Singapore":
-                    document.getElementById("storeDescription").innerHTML = "Majulah Ahoy";
-                    document.getElementById("foodType").innerHTML = "Non-Halal";
-                    document.getElementById("foodAvailability").innerHTML = "Yes";
+                    document.getElementById("storeDescription"+stallName).innerHTML = "Majulah Ahoy";
+                    document.getElementById("foodType"+stallName).innerHTML = "Non-Halal";
+                    document.getElementById("foodAvailability"+stallName).innerHTML = "Yes";
                     break;
         }
 }
