@@ -8,6 +8,7 @@ var store = "";
 
 //Organization Page
 becomeOrganizerPage = function(){
+    //Page Effects
     hideAllPages();
     document.getElementById("buttonOrganization").style.backgroundColor = "rgb(0, 255, 0)";
     document.getElementById("maintext").innerHTML = "Choose Location: <br>"+
