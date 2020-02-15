@@ -12,10 +12,9 @@
     <a><div class="button" id="logo" ">LOGO</div></a>
     <div id="wrapper">
         <header>
-        
             <div id="topbuttonset">
                 <div class="buttonrow">
-                    <a><div class="button" id="buttonMain" onclick="startPage()">Main Menu</div></a>
+                    <a><div class="button" id="buttonMain" onclick="homePage()">Main Menu</div></a>
                     <a><div class="button" id="buttonAboutUs" onclick="aboutUs()">About Us</div></a>
                     <a><div class="button" id="buttonStores" onclick="aboutUs()">Lists of Organization</div></a>
                     <a><div class="button" id="buttonOrganization" onclick="aboutUs()">List of Food Store</div></a>
@@ -24,7 +23,17 @@
                 </div>
             </div>
         </header>
+        <div>
     </div>
+
+    <!--Home Page-->
+    <div id= "homePage">
+        <div class="homeButtonRow">
+            <a><div class="homeButton" id="buttonOrganization" onclick="aboutUs()">Organization<br><i>Click Here</i></div></a>
+            <a><div class="homeButton" id="buttonFoodStores" onclick="aboutUs()">Food Stores<br><i>Click Here</i></div></a>
+        </div>
+    </div>
+    
     <div id="maintext">There is no text here.</div>
     <p>By Team MIA<br>
     Theme: Climate Action</p>
@@ -32,7 +41,7 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/util.js"></script>
 <script>
-    startPage();
+    homePage();
     getDateTime();  
 </script>
 </body>

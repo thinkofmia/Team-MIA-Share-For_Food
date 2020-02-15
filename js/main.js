@@ -1,6 +1,7 @@
-//Start Page
-startPage = function(){
+//Home Page
+homePage = function(){
     document.getElementById("maintext").innerHTML = "Starting";
+    
 }
 
 aboutUs = function(){
