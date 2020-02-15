@@ -5,12 +5,12 @@
     position: relative;
     left: 10%;
     width: 90%;
-    background-size: cover;
+	background-size: cover;
 }
 
 /* Buttons */
 .button {
-	background-color: #4CAF50;
+	background-color: #e2e2fd;
 	background-repeat: no-repeat;
 	width: 170px;
 	height: 38px;
@@ -26,7 +26,7 @@
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 38px;
-	color: #000000;
+	color: #321119;
     transition: color 0.2s linear;
     cursor: grab;
 }
