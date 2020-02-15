@@ -103,6 +103,7 @@ body {
 	width: 200px;
 	overflow: hidden;
 	display: inline-block;
+	text-align: center;
 }
 .storeImg{
 	width: "200px"; 
