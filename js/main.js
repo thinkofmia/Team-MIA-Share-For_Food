@@ -44,11 +44,10 @@ showAboutUsPage = function(){
     "<div class= 'centralizeText' id='aboutUsText'>"+
     "<h1>Team MIA</h1>"+
     "Members of Team MIA: Fre<b>M</b>ont, N<b>I</b>cholas, <b>A</b>nson<br><br>"+
-    "<b> Formal problem statement </b><br>"+
-    "<b> Definition of the target</b><br>"+
+    "<b>MISSION</b><br>"+
     "Climate change is a change in the common weather found in a location, which can be measured as a difference in how much rain a place usually gets in a year or a change in a location's normal temperature for a month or season. "+
     "Leftover food is defined as consumables that remain unused or unconsumed.<br><br>"+
-    "<b>Brief Description</b><br><br>"+
+    "<b>VISION</b><br><br>"+
     "In 2018, the total food wastage generated is up to 763,100 tonnes in Singapore. Food waste accounts for about 10 per cent of the total waste generated in Singapore and those that are disposed of go the waste-to-energy plants for incineration.<br><br>"+
     "Our submission aims to reduce the amount of food wastage in NTU canteens/restaurants by collecting leftover food and distributing them accordingly to the relevant needy people organizations.<br><br>"+
     "<b>Outline of the approach</b><br>"+

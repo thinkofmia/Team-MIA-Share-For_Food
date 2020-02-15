@@ -36,7 +36,7 @@ checkStore = function () {
     //For Debug
     console.log(foodStore.selectedCanteen);
     //Ask store
-    document.getElementById("subtext1").innerHTML = "Choose your store: <select id='selectedStore'>"+
+    document.getElementById("subtext1").innerHTML = "<br>Choose your store: <select id='selectedStore'>"+
     txt+"</select><br><br>";
     
     //Verification Code
