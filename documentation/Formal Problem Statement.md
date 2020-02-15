@@ -9,7 +9,7 @@ Leftover food is defined as consumables that remain unused or unconsumed.
 Greenhouse Emission refers to the emission of greenhouse-affective gases into the Earth's atmosphere.
 
 ## Brief Description
-In 2018, the total food wastage generated is up to 763,100 tonnes in Singapore.[1] Food waste accounts for about 10 per cent of the total waste generated in Singapore and those that are disposed of go the waste-to-energy plants for incineration.
+In 2018, the total food wastage generated is up to 763,100 tonnes in Singapore.[[1]] Food waste accounts for about 10 per cent of the total waste generated in Singapore and those that are disposed of go the waste-to-energy plants for incineration.
 
 Our submission aims to reduce the amount of food wastage in NTU canteens/restaurants by collecting leftover food and distributing them accordingly to the relevant needy people organizations.
 
