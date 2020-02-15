@@ -8,19 +8,19 @@ pickFoodStorePage = function () {
     document.getElementById("subtext1").innerHTML = "";
     document.getElementById("buttonFoodStores").style.backgroundColor = "rgb(0, 255, 0)";
     //Select Canteen
-    document.getElementById("maintext").innerHTML = "Choose your store: ";
-    document.getElementById("maintext").innerHTML += "<select id='selectedSpine'>" +
+    document.getElementById("maintext").innerHTML = "Choose your location: ";
+    document.getElementById("maintext").innerHTML += "<select id='selectedSpine' onchange='checkStore()'>" +
         "<option value='NorthSpine'>North Spine</option>" +
         "<option value='SouthSpine'>South Spine</option>" +
-        "</select><br><br>";
-    //Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' id='checkButton' onclick='checkStore()' '>";
-}
+        "</select>";
+    }
 
 checkStore = function () {
     //Select Store
     var txt = "";
+    //Set Canteen
     foodStore.selectedCanteen = document.getElementById("selectedSpine").value;
+    //
     if (foodStore.selectedCanteen == "NorthSpine") {
         txt = "<option value='ChickenRice'>Chicken Rice</option>" +
             "<option value='MixedVegetable Rice'>Mixed Vegetable Rice</option>" +
@@ -32,15 +32,16 @@ checkStore = function () {
             "<option value='NasiBriyani'>Nasi Briyani</option>";
             
     }
+    //For Debug
     console.log(foodStore.selectedCanteen);
+    //Ask store
     document.getElementById("subtext1").innerHTML = "Choose your store: <select id='selectedStore'>"+
     txt+"</select><br><br>";
     
-    
     //Verification Code
-    document.getElementById("maintext").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
+    document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
     //Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' id='submitButton' onclick='selectStore()' '></form>";
+    document.getElementById("subtext1").innerHTML += "<input type='submit' id='submitButton' onclick='selectStore()' '></form>";
 }
 
 selectStore = function () {
@@ -59,25 +60,24 @@ setFood = function () {
     document.getElementById("maintext").innerHTML = foodStore.selected + "<br>";
     console.log('canteen/' + foodStore.selectedCanteen + '/'+ foodStore.selected);
     firebase.database().ref('canteen/' + foodStore.selectedCanteen + '/'+ foodStore.selected).once('value').then(function(snapshot){
-        descriptionData= snapshot.val().description;
+        //descriptionData= snapshot.val().description;
         meatData = snapshot.val().meat;
         riceData = snapshot.val().rice;
         soupData = snapshot.val().soup;
         vegetableData = snapshot.val().vegetable;
         timeToCollect = snapshot.val().timeToCollect;
-        console.log(descriptionData);
+        //console.log(descriptionData);
         //Display Food Options
         document.getElementById("maintext").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value = "+riceData+"></input>kg<br>" +
         "<b>Vegetable:</b> <input type='text' id='veg' value = "+ vegetableData+"></input>kg<br>" +
         "<b>Meat:</b> <input type='text' id='meat' value = "+ meatData+"></input>kg<br>" +
         "<b>Soup:</b> <input type='text' id='soup' value = "+soupData+"></input>kg<br>" +
-        "<b>Others:</b> <input type='text' id='description' value = "+(descriptionData)+"></input><br>" +
         "<b>Time to Collect:</b> <input type='text' id='timeToCollect' value = "+timeToCollect+"></input><br>";
 
         //Display Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' onclick='foodStoreEnd()' '>";
-    });
-        
+    document.getElementById("maintext").innerHTML += "<input type='submit' id = 'updateDatabase' onclick='foodStoreEnd()' '>";
+    
+});
     
 }
 
@@ -93,7 +93,18 @@ foodStoreEnd = function () {
 
     //Print what is donated
     else {
-
+        
+        const newData = {
+            meat: document.getElementById("meat").value,
+            rice: document.getElementById("rice").value,
+            soup: document.getElementById("soup").value,
+            vegetable: document.getElementById("veg").value
+        };
+    
+        const updates = {};
+        updates['canteen/' + foodStore.selectedCanteen + '/'+ foodStore.selected] = newData;
+        console.log(updates);
+        database.ref().update(updates);
 
         
         //Print
@@ -105,7 +116,7 @@ foodStoreEnd = function () {
             foodDelievered += "<b>Meat:</b> " + document.getElementById("meat").value + "kg<br>";
         if (document.getElementById("soup").value > 0)
             foodDelievered += "<b>Soup:</b> " + document.getElementById("soup").value + "kg<br>";
-        document.getElementById("maintext").innerHTML = "<h1>Thank you for donating!: <br></h1>" + foodDelievered;
+        document.getElementById("maintext").innerHTML = "<h1>Thank you for donating!<br></h1>" + foodDelievered;
     }
 }
 
