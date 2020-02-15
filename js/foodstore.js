@@ -59,19 +59,18 @@ setFood = function () {
     document.getElementById("maintext").innerHTML = foodStore.selected + "<br>";
     console.log('canteen/' + foodStore.selectedCanteen + '/'+ foodStore.selected);
     firebase.database().ref('canteen/' + foodStore.selectedCanteen + '/'+ foodStore.selected).once('value').then(function(snapshot){
-        descriptionData= snapshot.val().description;
+        //descriptionData= snapshot.val().description;
         meatData = snapshot.val().meat;
         riceData = snapshot.val().rice;
         soupData = snapshot.val().soup;
         vegetableData = snapshot.val().vegetable;
         timeToCollect = snapshot.val().timeToCollect;
-        console.log(descriptionData);
+        //console.log(descriptionData);
         //Display Food Options
         document.getElementById("maintext").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value = "+riceData+"></input>kg<br>" +
         "<b>Vegetable:</b> <input type='text' id='veg' value = "+ vegetableData+"></input>kg<br>" +
         "<b>Meat:</b> <input type='text' id='meat' value = "+ meatData+"></input>kg<br>" +
         "<b>Soup:</b> <input type='text' id='soup' value = "+soupData+"></input>kg<br>" +
-        "<b>Others:</b> <input type='text' id='description' value = "+(descriptionData)+"></input><br>" +
         "<b>Time to Collect:</b> <input type='text' id='timeToCollect' value = "+timeToCollect+"></input><br>";
 
         //Display Submit Button
@@ -105,7 +104,7 @@ foodStoreEnd = function () {
             foodDelievered += "<b>Meat:</b> " + document.getElementById("meat").value + "kg<br>";
         if (document.getElementById("soup").value > 0)
             foodDelievered += "<b>Soup:</b> " + document.getElementById("soup").value + "kg<br>";
-        document.getElementById("maintext").innerHTML = "<h1>Thank you for donating!: <br></h1>" + foodDelievered;
+        document.getElementById("maintext").innerHTML = "<h1>Thank you for donating!<br></h1>" + foodDelievered;
     }
 }
 
