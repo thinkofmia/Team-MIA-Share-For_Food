@@ -1,8 +1,8 @@
 //Variables
-var rice = 'off';
-var veggie = 'off';
-var soup = 'off';
-var meat = 'off';
+var rice = false;
+var veggie = false;
+var soup = false;
+var meat = false;
 var canteen = "";
 var store = "";
 
@@ -78,10 +78,10 @@ displayIndividualStore = function(canteenName, stallName,txt){
 displayFood = function(canteen,stallName){
     store = stallName;
     //Reset
-    rice = 'off';
-    meat = 'off';
-    soup = 'off';
-    veggie = 'off';
+    rice = false;
+    meat = false;
+    soup = false;
+    veggie = false;
 
     //Code
     document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
@@ -101,10 +101,10 @@ displayFood = function(canteen,stallName){
 
 organizationVerificationPage = function(){
     //Initialization
-    rice = document.getElementById("riceCheck").value;
-    veggie = document.getElementById("vegCheck").value;
-    meat = document.getElementById("meatCheck").value;
-    soup = document.getElementById("soupCheck").value;
+    rice = document.getElementById("riceCheck").checked;
+    veggie = document.getElementById("vegCheck").checked;
+    meat = document.getElementById("meatCheck").checked;
+    soup = document.getElementById("soupCheck").checked;
     
     //Display Checkout
     document.getElementById("subtext1").innerHTML = "<form action='/action_page.php'>";
@@ -112,14 +112,14 @@ organizationVerificationPage = function(){
     document.getElementById("subtext1").innerHTML +="<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>"+
     "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='Black Lightning is back'></input><br>";
     //Display food selected
-    if (rice=='on')
-        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value=5 min=0 max=5></input>kg<br>";
-    if (veggie=='on')
-        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg' value=5 min=0 max=10></input>kg<br>";
-    if (meat=='on')
-        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat' value=5 min=0 max=7></input>kg<br>";
-    if (soup=='on')
-        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup' value=0 min=0 max=2></input>kg<br>";
+    if (rice)
+        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice'></input>kg<br>";
+    if (veggie)
+        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg'></input>kg<br>";
+    if (meat)
+        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat'></input>kg<br>";
+    if (soup)
+        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup'></input>kg<br>";
     //Display Time to collect and remarks
     document.getElementById("subtext1").innerHTML +="<b>Collection Time:</b> <input type='text' id='collectionTime' value='Input time to collect'></input><br>"+
     "<b>Remarks:</b> <input type='text' id='remarks' value='Input remarks'></input><br>";
@@ -130,13 +130,13 @@ viewConfirmPage = function(){
     //Var
     var organizationName = document.getElementById("organizationName").value;
     var foodOrdered = "";
-    if (rice=='on')
+    if (rice)
         foodOrdered += "<b>Rice:</b> "+document.getElementById("rice").value+"kg<br>";
-    if (veggie=='on')
+    if (veggie)
         foodOrdered += "<b>Vegetables:</b> "+document.getElementById("veg").value+"kg<br>";
-    if (meat=='on')
+    if (meat)
         foodOrdered += "<b>Meat:</b> "+document.getElementById("meat").value+"kg<br>";
-    if (soup=='on')
+    if (soup)
          foodOrdered += "<b>Soup:</b> "+document.getElementById("soup").value+"kg<br>";
     
     //Print Confirmations
