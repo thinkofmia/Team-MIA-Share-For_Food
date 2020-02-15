@@ -83,7 +83,7 @@ displayStores = function(canteenName){
 //Display each store in boxes
 displayIndividualStore = function(stallName,txt){
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>"+
-    "<img src='img/"+stallName+".jpg' alt='Stall Img' width='200' height='170' onclick=\"displayFood('"+stallName+"')\"></div>"+txt+"</div>";
+    "<img src='img/"+stallName+".jpg' alt='Stall Img' width='290' height='200' onclick=\"displayFood('"+stallName+"')\"></div>"+txt+"</div>";
         //Check stallName and print accordingly
         switch(stallName){
             case "Anson & Friends":
