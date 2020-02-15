@@ -13,6 +13,7 @@ pickFoodStorePage = function () {
         "<option value='NorthSpine'>North Spine</option>" +
         "<option value='SouthSpine'>South Spine</option>" +
         "</select>";
+    checkStore();
     }
 
 checkStore = function () {
