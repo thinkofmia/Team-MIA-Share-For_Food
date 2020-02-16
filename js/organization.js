@@ -205,10 +205,18 @@ organizationVerificationPage = function () {
     try { veggie = document.getElementById("vegCheck").checked; } catch (error) { }
     try { meat = document.getElementById("meatCheck").checked; } catch (error) { }
     try { soup = document.getElementById("soupCheck").checked; } catch (error) { }
-
-    //Display organization input box and verification Passcode
-    document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>" +
-        "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
+    //Check list of organizations
+    txt = "";
+    for (var i =0;i<organizationNames.length;i++){
+        txt += "<option value='"+organizationNames[i]["name"]+"'>"+organizationNames[i]["name"]+"</option>"
+    }
+    
+    //Display organization input box
+    document.getElementById("subtext1").innerHTML = "<br>Choose your store: <select id='selectedStore'>"+
+    txt+"</select><br><br>";
+    //document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>";
+    //Display verification code
+    document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
     //Display food selected
     if (rice)
         document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value = 0></input>/" + maxRice + " kg<br>";
