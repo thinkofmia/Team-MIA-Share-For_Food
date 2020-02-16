@@ -14,12 +14,16 @@ Submission for 24hackathon (15th-16th Feb)
 - Programmes Languages: JavaScript, html, css
 ## SDKs used in the project
 - Firebase
+    - https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js
+    - https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js
+    - https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js
+    
 ## APIs used in the project
 None
 ## Any assets or data repositories used in the project
 None
 ## Any libraries used in the project
-- firebasejs
+- Firebase
 ## Any components not created at the hackathon
 - Sleep
 
