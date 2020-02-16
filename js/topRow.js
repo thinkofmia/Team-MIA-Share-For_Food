@@ -5,6 +5,14 @@ var organizationNames = [
     {"name":"Adventist Community Services", "address":"130 Joo Seng Rd, #03-01, Singapore 368357", "link":"https://www.communityservices.org.sg/"},
 ];
 
+var foodStallNames = [
+    {"name":"ChickenRice", "address":"North Spine"},
+    {"name":"MixedVegetableRice", "address":"North Spine"},
+    {"name":"Vegetarian", "address":"North Spine"},
+    {"name":"DuckRice", "address":"South Spine"},
+    {"name":"NasiBriyani", "address":"South Spine"}
+];
+
 //Contact US Page
 showContactUsPage = function(){
     hideAllPages();
@@ -21,18 +29,18 @@ showOrganizationListPage = function(){
     for (var i=0;i<organizationNames.length;i++){
     document.getElementById("maintext").innerHTML += "<div class='store2'><div class='storeImg'>" +
         "<a target='_blank' rel='noopener noreferrer' href = '"+organizationNames[i]["link"]+"'><img src='img/" + organizationNames[i]["name"] + ".png' alt='" + organizationNames[i]["name"] +
-         "' width = '250' height ='200'></div>" + organizationNames[i]["name"] +"<br>Address: "+organizationNames[i]["address"]+"</div></a>";
+        "' width = '250' height ='200'></div><b>" + organizationNames[i]["name"] +"</b><br>Address: "+organizationNames[i]["address"]+"</div></a>";
     }
 }
 
 //List of Food Stalls Page
 showFoodStallsListPage = function(){
     hideAllPages();
-    //document.getElementById("homePage").style.display = "inline-block";
-    document.getElementById("maintext").innerHTML = 
-    "<div class = imgWrapper>"+
-    "<img src='img/charmander.jpg' alt='Share for Food Poster'>"+
-    "</div>";
+    for (var i=0;i<foodStallNames.length;i++){
+        document.getElementById("maintext").innerHTML += "<div class='store'><div class='storeImg'>" +
+            "<a target='_blank' rel='noopener noreferrer'><img src='img/" + foodStallNames[i]["name"] + ".jpg' alt='" + foodStallNames[i]["name"] +
+             "' width = '250' height ='200'></div><b>" + foodStallNames[i]["name"] +"</b><br>Address: "+foodStallNames[i]["address"]+"</div></a>";
+        }
 }
 
 //About Us Page
