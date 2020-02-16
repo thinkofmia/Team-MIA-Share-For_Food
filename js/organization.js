@@ -182,34 +182,112 @@ organizationVerificationPage = function () {
         "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='Black Lightning is back'></input><br>";
     //Display food selected
     if (rice)
-        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice'></input>kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice'></input>/"+maxRice+"kg<br>";
     if (veggie)
-        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg'></input>kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg'></input>/"+maxVegetable+"kg<br>";
     if (meat)
-        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat'></input>kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat'></input>/"+maxMeat+"kg<br>";
     if (soup)
-        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup'></input>kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup'></input>/"+maxSoup+"kg<br>";
     //Display Time to collect and remarks
     document.getElementById("subtext1").innerHTML += "<b>Collection Time:</b> <input type='text' id='collectionTime' value='Input time to collect'></input><br>" +
         "<b>Remarks:</b> <input type='text' id='remarks' value='Input remarks'></input><br>";
-    document.getElementById("subtext1").innerHTML += "<input type='submit' value='Next' onclick='viewConfirmPage()' '></form>";
+    document.getElementById("subtext1").innerHTML += "<input type='submit' value='Next' onclick='checkCorrectAmount()' '></form>";
 }
 
-viewConfirmPage = function () {
-    console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
+//Check if Success
+checkCorrectAmount = function(){
+    document.getElementById("subtext2").innerHTML = "";
+    //Convert Strings of Max Values to Float
+    maxMeat = parseFloat(maxMeat);
+    maxVegetable = parseFloat(maxVegetable);
+    maxRice = parseFloat(maxRice);
+    maxSoup = parseFloat(maxSoup);
+    //Check Rice
+    if(rice){
+        var riceInput = document.getElementById("rice").value;
+        if (riceInput<0) {
+            document.getElementById("subtext2").innerHTML = "INVALID RICE INPUT!<br>";
+            return;
+        }
+        else if(riceInput>maxRice){
+            document.getElementById("subtext2").innerHTML = "RICE INPUT EXCEEDED MAX RICE!<br>";
+            return;
+        }
+    }
     
+    if(veggie){
+        var vegInput = document.getElementById("veg").value;
+        if (vegInput<0) {
+            document.getElementById("subtext2").innerHTML = "INVALID VEG INPUT!<br>";
+            return;
+        }
+        else if(vegInput>maxVegetable){
+            document.getElementById("subtext2").innerHTML = "VEG INPUT EXCEEDED MAX VEG!<br>";
+            return;
+        }
+    }
+
+    if(soup){
+        var soupInput = document.getElementById("soup").value;
+        if (soupInput<0) {
+            document.getElementById("subtext2").innerHTML = "INVALID SOUP INPUT!<br>";
+            return;
+        }
+        else if(soupInput>maxSoup){
+            document.getElementById("subtext2").innerHTML = "SOUP INPUT EXCEEDED MAX SOUP!<br>";
+            return;
+        }
+    }
+
+    if(meat){
+        var meatInput = document.getElementById("meat").value;
+        if (meatInput<0) {
+            document.getElementById("subtext2").innerHTML = "INVALID MEAT INPUT!<br>";
+            return;
+        }
+        else if(meatInput>maxMeat){
+            document.getElementById("subtext2").innerHTML = "MEAT INPUT EXCEEDED MAX MEATs!<br>";
+            return;
+        }
+    }
+
+    //For Debug Purposes
+    /*console.log("Input values: "+ [riceInput,vegInput,meatInput,soupInput]);
+    console.log("Max values: "+ [maxRice,maxVegetable,maxMeat,maxSoup]);*/
+
+    //Success
+    subtractFromDatabase();
+    viewConfirmPage();
+
+}
+
+subtractFromDatabase = function(){
+    //Get float value of Inputs
+    if (rice)
+        var newRice = maxRice - parseFloat(document.getElementById("rice").value);
+    if (veggie)
+        var newVeg = maxVegetable - parseFloat(document.getElementById("veg").value);
+    if (soup)
+        var newSoup = maxSoup - parseFloat(document.getElementById("soup").value);
+    if (veggie)
+        var newMeat = maxMeat - parseFloat(document.getElementById("meat").value);
+}
+
+//Display confirmation page
+viewConfirmPage = function () {
     //Remember Organization Name
     var organizationName = document.getElementById("organizationName").value;
     //Create list of food submitted
     var foodOrdered = "";
     if (rice)
-        foodOrdered += "<b>Rice:</b> " + document.getElementById("rice").value + "kg<br>";
+        foodOrdered += "<b>Rice:</b> " + document.getElementById("rice").value + " kg<br>";
     if (veggie)
-        foodOrdered += "<b>Vegetables:</b> " + document.getElementById("veg").value + "kg<br>";
+        foodOrdered += "<b>Vegetables:</b> " + document.getElementById("veg").value + " kg<br>";
     if (meat)
-        foodOrdered += "<b>Meat:</b> " + document.getElementById("meat").value + "kg<br>";
+        foodOrdered += "<b>Meat:</b> " + document.getElementById("meat").value + " kg<br>";
     if (soup)
-        foodOrdered += "<b>Soup:</b> " + document.getElementById("soup").value + "kg<br>";
+        foodOrdered += "<b>Soup:</b> " + document.getElementById("soup").value + " kg<br>";
 
     //Print Confirmations Page
     document.getElementById("subtext1").innerHTML = "";
