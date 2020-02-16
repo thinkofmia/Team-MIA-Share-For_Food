@@ -130,38 +130,47 @@ displayFood = function (stallName) {
     console.log('canteen/' + canteen + '/' + store);
     firebase.database().ref('canteen/' + canteen + '/' + store).once('value').then(function (snapshot) {
         //descriptionData= snapshot.val().description;
-        meatData = snapshot.val().meat;
-        console.log(meatData);
-        riceData = snapshot.val().rice;
-        soupData = snapshot.val().soup;
-        vegetableData = snapshot.val().vegetable;
+        meatData = parseFloat(snapshot.val().meat);
+        riceData = parseFloat(snapshot.val().rice);
+        soupData = parseFloat(snapshot.val().soup);
+        vegetableData = parseFloat(snapshot.val().vegetable);
         timeToCollect = snapshot.val().timeToCollect;
 
         //Display Left Over Food Available in check boxes
         document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
-        document.getElementById("subtext1").innerHTML +=
+        
             //Display Rice
-
-            "<input type='checkbox' id='riceCheck' name='Rice'>" +
-            "Rice <br>Estimated Amount: <label id = 'rice1' for='riceCheck'>" + riceData + "</label> kg<br><br>" +
+            if (riceData>0){
+                document.getElementById("subtext1").innerHTML += "<input type='checkbox' id='riceCheck' name='Rice'>" +
+                "Rice <br>Estimated Amount: <label id = 'rice1' for='riceCheck'>" + riceData + "</label> kg<br><br>";
+                maxRice = document.getElementById("rice1").innerText;
+            }
             //Display Vegetables
-            "<input type='checkbox' id='vegCheck' name='Vegetables'>" +
-            "Vegetables <br>Estimated Amount:<label id = 'vege1' for='vegeCheck'>" + vegetableData + "</label> kg<br><br>" +
+            if (vegetableData>0){
+                document.getElementById("subtext1").innerHTML +=
+                "<input type='checkbox' id='vegCheck' name='Vegetables'>" +
+                "Vegetables <br>Estimated Amount:<label id = 'vege1' for='vegeCheck'>" + vegetableData + "</label> kg<br><br>";
+                maxVegetable = document.getElementById("vege1").innerHTML;
+            }
             //Display Meat
-            "<input type='checkbox' id='meatCheck' name='Meat'>" +
-            "Meat <br>Estimated Amount:<label id = 'meat1' for='meatCheck'>" + meatData + "</label> kg<br><br>" +
+            if (meatData>0){
+                document.getElementById("subtext1").innerHTML +=
+                "<input type='checkbox' id='meatCheck' name='Meat'>" +
+                "Meat <br>Estimated Amount:<label id = 'meat1' for='meatCheck'>" + meatData + "</label> kg<br><br>";
+                maxMeat = document.getElementById("meat1").innerHTML;
+            }
             //Display Soup
-            "<input type='checkbox' id='soupCheck' name='Soup'>" +
-            "Soup <br>Estimated Amount: <label id = 'soup1' for='soupCheck'>" + soupData + "</label> kg<br><br>" +
+            if (soupData>0){
+                document.getElementById("subtext1").innerHTML +=
+                "<input type='checkbox' id='soupCheck' name='Soup'>" +
+                "Soup <br>Estimated Amount: <label id = 'soup1' for='soupCheck'>" + soupData + "</label> kg<br><br>";
+                maxSoup = document.getElementById("soup1").innerHTML;
+            }
+
             //The ones that are checked will be available for input later
-            "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
-
-        maxRice = document.getElementById("rice1").innerText;
-        maxVegetable = document.getElementById("vege1").innerHTML;
-        maxMeat = document.getElementById("meat1").innerHTML;
-        maxSoup = document.getElementById("soup1").innerHTML;
-        console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
-
+            //Submit Button
+            document.getElementById("subtext1").innerHTML += "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
+        //console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
 
     });
     
@@ -169,11 +178,12 @@ displayFood = function (stallName) {
 
 organizationVerificationPage = function () {
     //Initialization
+    rice = false; veggie = false; meat = false; soup = false;
     //Check which variables are checked
-    rice = document.getElementById("riceCheck").checked;
-    veggie = document.getElementById("vegCheck").checked;
-    meat = document.getElementById("meatCheck").checked;
-    soup = document.getElementById("soupCheck").checked;
+    try { rice = document.getElementById("riceCheck").checked;} catch(error){}
+    try { veggie = document.getElementById("vegCheck").checked;}catch(error){}
+    try { meat = document.getElementById("meatCheck").checked;}catch(error){}
+    try { soup = document.getElementById("soupCheck").checked;}catch(error){}
 
     //Display organization input box and verification Passcode
     document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>" +

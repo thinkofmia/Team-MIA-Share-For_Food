@@ -13,3 +13,5 @@ getDateTime = function(){
     setTimeout(getDateTime, 1000);
 }
 
+//Check if input is float
+var isFloat = function(n) { return parseFloat(n) === n };
