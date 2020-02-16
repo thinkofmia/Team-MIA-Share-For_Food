@@ -15,7 +15,7 @@ showOrganizationListPage = function(){
     hideAllPages();
     for (name in organizationNames){
     document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>" +
-        "<img src='img/" + name + ".jpg' alt='" + name + "'></div>" + name + "</div>";
+        "<img src='img/" + name + ".png' alt='" + name + "'></div>" + name + "</div>";
     }
 }
 

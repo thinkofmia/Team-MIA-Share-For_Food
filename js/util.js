@@ -12,3 +12,4 @@ getDateTime = function(){
     //Set TimeOut and loop
     setTimeout(getDateTime, 1000);
 }
+
