@@ -208,7 +208,7 @@ organizationVerificationPage = function () {
 
     //Display organization input box and verification Passcode
     document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>" +
-        "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
+        "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
     //Display food selected
     if (rice)
         document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value = 0></input>/" + maxRice + " kg<br>";
@@ -219,7 +219,7 @@ organizationVerificationPage = function () {
     if (soup)
         document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup' value = 0></input>/" + maxSoup + " kg<br>";
     //Display Time to collect and remarks
-    document.getElementById("subtext1").innerHTML += "<b>Collection Time:</b> <input type='text' id='collectionTime' value='00:00'></input><br>" +
+    document.getElementById("subtext1").innerHTML += "<b>Collection Time:</b> <input type='text' id='collectionTime' value='18:00'></input><br>" +
         "<b>Remarks:</b> <input type='text' id='remarks' value='No remarks'></input><br>";
     document.getElementById("subtext1").innerHTML += "<input type='submit' value='Next' onclick='checkCorrectAmount()' '>";
 }

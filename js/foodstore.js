@@ -40,7 +40,7 @@ checkStore = function () {
     txt+"</select><br><br>";
     
     //Verification Code
-    document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
+    document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
     //Submit Button
     document.getElementById("subtext1").innerHTML += "<input type='submit' id='submitButton' onclick='selectStore()' '></form>";
 }
@@ -73,7 +73,7 @@ setFood = function () {
         "<b>Vegetable:</b> <input type='text' id='veg' value = "+ vegetableData+"></input>kg<br>" +
         "<b>Meat:</b> <input type='text' id='meat' value = "+ meatData+"></input>kg<br>" +
         "<b>Soup:</b> <input type='text' id='soup' value = "+soupData+"></input>kg<br>" +
-        "<b>Time to Collect:</b> <input type='text' id='timeToCollect' value = "+timeToCollect+"></input><br>";
+        "<b>Time to Collect:</b> <input type='text' id='timeToCollect' value = '18:00'></input><br>";
 
         //Display Submit Button
     document.getElementById("maintext").innerHTML += "<input type='submit' id = 'updateDatabase' onclick='foodCheck()' '>";
@@ -130,7 +130,7 @@ foodStoreEnd = function () {
             rice: document.getElementById("rice").value,
             soup: document.getElementById("soup").value,
             vegetable: document.getElementById("veg").value,
-            timeToCollect: document.getElementById("timeToCollect").value
+            //timeToCollect: document.getElementById("timeToCollect").value
         };
     
         const updates = {};
