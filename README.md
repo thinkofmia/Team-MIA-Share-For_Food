@@ -33,3 +33,9 @@ https://lessonsgowhere.com.sg/cooking-classes/chicken-nasi-briyani-by-celebrity-
 https://eatbook.sg/braised-duck-rice/
 http://www.morethanveggies.sg/events/vegan-malay-food-sapao/
 https://aromacookery.com/2008/03/01/economic-rice-dinner-at-clementi/
+https://www.triplepundit.com/story/2013/food-waste-has-big-impact-climate-water-land-and-biodiversity/48866
+http://www.fao.org/3/i3347e/i3347e.pdf
+https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/food-waste-management
+https://www.pub.gov.sg/sites/assets/PressReleaseDocuments/Annex_Factsheet-on-Food-Waste-Management-in-Singapore-Website.pdf
+https://globalnews.ca/news/6366259/what-causes-australia-wildfires/
+https://www.ntu.edu.sg/AboutNTU/CorporateInfo/FactsFigures/Pages/staffpopulation.aspx

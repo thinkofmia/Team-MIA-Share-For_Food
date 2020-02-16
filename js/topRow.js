@@ -18,9 +18,9 @@ showContactUsPage = function(){
 showOrganizationListPage = function(){
     hideAllPages();
     for (var i=0;i<organizationNames.length;i++){
-    document.getElementById("maintext").innerHTML += "<div class='store'><div class='storeImg'>" +
+    document.getElementById("maintext").innerHTML += "<div class='store2'><div class='storeImg'>" +
         "<a target='_blank' rel='noopener noreferrer' href = '"+organizationNames[i]["link"]+"'><img src='img/" + organizationNames[i]["name"] + ".png' alt='" + organizationNames[i]["name"] +
-         "' width = '200' height ='200'></div>" + organizationNames[i]["name"] +"<br>Address: "+organizationNames[i]["address"]+"</div></a>";
+         "' width = '250' height ='200'></div>" + organizationNames[i]["name"] +"<br>Address: "+organizationNames[i]["address"]+"</div></a>";
     }
 }
 
