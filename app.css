@@ -73,7 +73,7 @@ body {
 
 
 .homeButtonRow {
-	margin-top: 0%;
+	margin-top: -5%;
 	margin-left: 31.5%;
 	position: relative;
 	display: inline-block;
@@ -136,4 +136,9 @@ body {
 	width: 260px;
 	overflow: hidden;
 	display: inline-block;
+}
+
+#imgWrapper{
+	position: absolute;
+	top: 10px;
 }
