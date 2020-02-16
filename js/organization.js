@@ -214,7 +214,7 @@ organizationVerificationPage = function () {
     //Display organization input box
     /*document.getElementById("subtext1").innerHTML = "<br>Choose your store: <select id='selectedStore'>"+
     txt+"</select><br><br>";*/
-    document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>";
+    document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Food from the Heart'></input><br>";
     //Display verification code
     document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
     //Display food selected
