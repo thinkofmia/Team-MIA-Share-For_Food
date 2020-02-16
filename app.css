@@ -128,3 +128,13 @@ body {
 #subtext1{
 	text-align: center;
 }
+
+.store2{
+	margin-right: 3%;
+	margin-left: 3%;
+	height: 300px;
+	width: 260px;
+	overflow: hidden;
+	display: inline-block;
+
+}
