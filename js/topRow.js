@@ -6,8 +6,19 @@ showContactUsPage = function(){
     "Please do drop us an email at shareforfood@mia.com.sg or call us at +65 8765 4321 for any enquiries.";
 }
 
+
 //List of Organization Page
 showOrganizationListPage = function(){
+    hideAllPages();
+    //document.getElementById("homePage").style.display = "inline-block";
+    document.getElementById("maintext").innerHTML = 
+    "<div class = imgWrapper>"+
+    "<img src='img/charmander.jpg' alt='Share for Food Poster'>"+
+    "</div>";
+}
+
+//List of Food Stalls Page
+showFoodStallsListPage = function(){
     hideAllPages();
     //document.getElementById("homePage").style.display = "inline-block";
     document.getElementById("maintext").innerHTML = 
