@@ -5,6 +5,10 @@ var soup = false;
 var meat = false;
 var canteen = "";
 var store = "";
+var maxRice = 0;
+var maxVegetable = 0;
+var maxSoup = 0;
+var maxMeat = 0;
 
 //Organization Page
 becomeOrganizerPage = function () {
@@ -49,7 +53,7 @@ displayStores = function (canteenName) {
     canteen = canteenName;
     //Check boxes for Halal, Veg and Allergies
     document.getElementById("subtext1").innerHTML =
-        "<form>"+
+        "<form>" +
         "<input type='checkbox' id='halalCheck' name='Halal'>" +
         "<label for='halalCheck'> Halal</label> " +
         "<input type='checkbox' id='vegCheck' name='Vegetarian'>" +
@@ -123,8 +127,8 @@ displayFood = function (stallName) {
     document.getElementById("subtext1").innerHTML = "";
     //Display Food Store Name
     document.getElementById("maintext").innerHTML = store + "<br>";
-    console.log('canteen/' + canteen + '/'+ store);
-    firebase.database().ref('canteen/' + canteen + '/'+ store).once('value').then(function(snapshot){
+    console.log('canteen/' + canteen + '/' + store);
+    firebase.database().ref('canteen/' + canteen + '/' + store).once('value').then(function (snapshot) {
         //descriptionData= snapshot.val().description;
         meatData = snapshot.val().meat;
         console.log(meatData);
@@ -133,25 +137,33 @@ displayFood = function (stallName) {
         vegetableData = snapshot.val().vegetable;
         timeToCollect = snapshot.val().timeToCollect;
 
-    //Display Left Over Food Available in check boxes
-    document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
-    document.getElementById("subtext1").innerHTML +=
-        //Display Rice
-        
-        "<input type='checkbox' id='riceCheck' name='Rice'>" +
-        "<label for='riceCheck'> Rice <br>Estimated Amount:"+ riceData+" kg</label><br><br>" +
-        //Display Vegetables
-        "<input type='checkbox' id='vegCheck' name='Vegetables'>" +
-        "<label for='vegeCheck'> Vegetables <br>Estimated Amount: 10kg</label><br><br>" +
-        //Display Meat
-        "<input type='checkbox' id='meatCheck' name='Meat'>" +
-        "<label for='meatCheck'> Meat <br>Estimated Amount: 7kg</label><br><br>" +
-        //Display Soup
-        "<input type='checkbox' id='soupCheck' name='Soup'>" +
-        "<label for='soupCheck'> Soup <br>Estimated Amount: 2kg</label><br><br>" +
-        //The ones that are checked will be available for input later
-        "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
+        //Display Left Over Food Available in check boxes
+        document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
+        document.getElementById("subtext1").innerHTML +=
+            //Display Rice
+
+            "<input type='checkbox' id='riceCheck' name='Rice'>" +
+            "Rice <br>Estimated Amount: <label id = 'rice1' for='riceCheck'>" + riceData + "</label> kg<br><br>" +
+            //Display Vegetables
+            "<input type='checkbox' id='vegCheck' name='Vegetables'>" +
+            "Vegetables <br>Estimated Amount:<label id = 'vege1' for='vegeCheck'>" + vegetableData + "</label> kg<br><br>" +
+            //Display Meat
+            "<input type='checkbox' id='meatCheck' name='Meat'>" +
+            "Meat <br>Estimated Amount:<label id = 'meat1' for='meatCheck'>" + meatData + "</label> kg<br><br>" +
+            //Display Soup
+            "<input type='checkbox' id='soupCheck' name='Soup'>" +
+            "Soup <br>Estimated Amount: <label id = 'soup1' for='soupCheck'>" + soupData + "</label> kg<br><br>" +
+            //The ones that are checked will be available for input later
+            "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
+
+        maxRice = document.getElementById("rice1").innerText;
+        maxVegetable = document.getElementById("vege1").innerHTML;
+        maxMeat = document.getElementById("meat1").innerHTML;
+        maxSoup = document.getElementById("soup1").innerHTML;
+        console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
+
     });
+
 }
 
 organizationVerificationPage = function () {
@@ -183,6 +195,7 @@ organizationVerificationPage = function () {
 }
 
 viewConfirmPage = function () {
+
     //Remember Organization Name
     var organizationName = document.getElementById("organizationName").value;
     //Create list of food submitted
