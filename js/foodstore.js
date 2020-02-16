@@ -24,7 +24,7 @@ checkStore = function () {
     //
     if (foodStore.selectedCanteen == "NorthSpine") {
         txt = "<option value='ChickenRice'>Chicken Rice</option>" +
-            "<option value='MixedVegetable Rice'>Mixed Vegetable Rice</option>" +
+            "<option value='MixedVegetableRice'>Mixed Vegetable Rice</option>" +
             "<option value='Vegetarian'>Vegetarian</option>";
             
     }
@@ -76,25 +76,55 @@ setFood = function () {
         "<b>Time to Collect:</b> <input type='text' id='timeToCollect' value = "+timeToCollect+"></input><br>";
 
         //Display Submit Button
-    document.getElementById("maintext").innerHTML += "<input type='submit' id = 'updateDatabase' onclick='foodStoreEnd()' '>";
+    document.getElementById("maintext").innerHTML += "<input type='submit' id = 'updateDatabase' onclick='foodCheck()' '>";
     
 });
     
 }
 
+foodCheck = function(){
+    //Clear subtext
+    document.getElementById("subtext1").innerHTML = "";
+    document.getElementById("subtext2").innerHTML = "";
+    //Local Var
+    var riceInput = document.getElementById("rice").value;
+    var meatInput = document.getElementById("meat").value;
+    var vegInput = document.getElementById("veg").value;
+    var soupInput = document.getElementById("soup").value;
+    //Check if valid input
+    if(riceInput<0|!isFloat(riceInput)){
+        document.getElementById("subtext1").innerHTML = "INVALID RICE INPUT!<br>";
+        return;
+    }
+    if(meatInput<0|!isFloat(meatInput)){
+        document.getElementById("subtext1").innerHTML = "INVALID MEAT INPUT!<br>";
+        return;
+    }
+    if(vegInput<0|!isFloat(vegInput)){
+        document.getElementById("subtext1").innerHTML = "INVALID VEG INPUT!<br>";
+        return;
+    }
+    if(soupInput<0|!isFloat(soupInput)){
+        document.getElementById("subtext1").innerHTML = "INVALID SOUP INPUT!<br>";
+        return;
+    }
+    //Check if nothing is donated
+    if (document.getElementById("rice").value <= 0 & document.getElementById("veg").value <= 0 & document.getElementById("meat").value <= 0 & document.getElementById("soup").value <= 0) {
+        document.getElementById("subtext1").innerHTML = "<h1>YOU DIDN'T EVEN DONATE ANYTHING!</h1>";
+        return;
+    }
+    else{
+        document.getElementById("subtext1").innerHTML = "";
+        document.getElementById("subtext2").innerHTML = "";
+        foodStoreEnd();
+    }   
+}
+
 //Confirmation of food store submission
 foodStoreEnd = function () {
     var foodDelievered = "";
-    //Check if nothing is donated
-    if (document.getElementById("rice").value <= 0 & document.getElementById("veg").value <= 0 & document.getElementById("meat").value <= 0 & document.getElementById("soup").value <= 0) {
-        document.getElementById("maintext").innerHTML = "<h1>YOU DIDN'T EVEN DONATE ANYTHING!</h1>";
-        //Set Return function
-        document.getElementById("maintext").innerHTML += "<input type='submit' value = 'Go Back' onclick='setFood()' '>";
-    }
 
     //Print what is donated
-    else {
-        
         const newData = {
             meat: document.getElementById("meat").value,
             rice: document.getElementById("rice").value,
@@ -119,6 +149,6 @@ foodStoreEnd = function () {
         if (document.getElementById("soup").value > 0)
             foodDelievered += "<b>Soup:</b> " + document.getElementById("soup").value + "kg<br>";
         document.getElementById("maintext").innerHTML = "<h1>Thank you for donating!<br></h1>" + foodDelievered;
-    }
+    
 }
 
