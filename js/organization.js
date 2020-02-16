@@ -207,7 +207,7 @@ organizationVerificationPage = function () {
     try { soup = document.getElementById("soupCheck").checked; } catch (error) { }
 
     //Display organization input box and verification Passcode
-    document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>" +
+    document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Food from the Heart'></input><br>" +
         "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
     //Display food selected
     if (rice)
