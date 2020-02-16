@@ -21,6 +21,7 @@ showHomePage = function(){
 //Hide all Pages
 hideAllPages = function(){
     document.getElementById("subtext1").innerHTML = "";
+    document.getElementById("subtext2").innerHTML = "";
     document.getElementById("maintext").innerHTML = "";
     document.getElementById("buttonOrganization").style.backgroundColor = "rgb(252, 189, 95)";
     document.getElementById("buttonFoodStores").style.backgroundColor = "rgb(252, 189, 95)";
