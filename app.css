@@ -41,7 +41,7 @@ body {
 	line-height: 38px;
 	color: #321119;
     transition: color 0.2s linear;
-    cursor: grab;
+	cursor: grab;
 }
 
 .homeButton {
