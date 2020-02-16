@@ -10,6 +10,7 @@ var maxVegetable = 0;
 var maxSoup = 0;
 var maxMeat = 0;
 
+
 //Organization Page
 becomeOrganizerPage = function () {
     //Page Effects
@@ -82,6 +83,25 @@ displayStores = function (canteenName) {
     }
 }
 
+//Check Availability of Store
+checkAvailability = function(stall){
+    //Set default availability = yes
+    document.getElementById("foodAvailability" + stall).innerHTML = "Yes";
+
+    //Collect data from base
+    firebase.database().ref('canteen/' + canteen + '/' + stall).once('value').then(function (snapshot) {
+        //set Total weight and increment accordingly
+        var totalWeight = 0;
+
+        totalWeight += parseFloat(snapshot.val().meat);
+        totalWeight += parseFloat(snapshot.val().rice);
+        totalWeight += parseFloat(snapshot.val().soup);
+        totalWeight += parseFloat(snapshot.val().vegetable); 
+
+        if (totalWeight<=0)document.getElementById("foodAvailability" + stall).innerHTML = "No";
+    })
+}
+
 //Display each store in boxes
 displayIndividualStore = function (stallName) {
     //Default txt
@@ -118,6 +138,7 @@ displayIndividualStore = function (stallName) {
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
     }
+    checkAvailability(stallName);
 }
 
 //Display Food available in each store
