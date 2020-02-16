@@ -1,5 +1,9 @@
 //Variables
-var organizationNames = [];
+var organizationNames = [
+    {"name":"Food from the Heart", "address":"90 Jurong East Street 13, Singapore 609648", "link":"https://www.foodfromtheheart.sg/"},
+    {"name":"TOUCH Community Services", "address":"162 Bukit Merah Central, #05-3545, Singapore 150162", "link":"https://www.touch.org.sg/"},
+    {"name":"Adventist Community Services", "address":"130 Joo Seng Rd, #03-01, Singapore 368357", "link":"https://www.communityservices.org.sg/"},
+];
 
 //Contact US Page
 showContactUsPage = function(){
@@ -13,9 +17,10 @@ showContactUsPage = function(){
 //List of Organization Page
 showOrganizationListPage = function(){
     hideAllPages();
-    for (name in organizationNames){
-    document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>" +
-        "<img src='img/" + name + ".png' alt='" + name + "'></div>" + name + "</div>";
+    for (var i=0;i<organizationNames.length;i++){
+    document.getElementById("maintext").innerHTML += "<div class='store'><div class='storeImg'>" +
+        "<a target='_blank' rel='noopener noreferrer' href = '"+organizationNames[i]["link"]+"'><img src='img/" + organizationNames[i]["name"] + ".png' alt='" + organizationNames[i]["name"] +
+         "' width = '200' height ='200'></div>" + organizationNames[i]["name"] +"<br>Address: "+organizationNames[i]["address"]+"</div></a>";
     }
 }
 
