@@ -162,8 +162,9 @@ displayFood = function (stallName) {
         maxSoup = document.getElementById("soup1").innerHTML;
         console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
 
-    });
 
+    });
+    
 }
 
 organizationVerificationPage = function () {
@@ -195,7 +196,8 @@ organizationVerificationPage = function () {
 }
 
 viewConfirmPage = function () {
-
+    console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
+    
     //Remember Organization Name
     var organizationName = document.getElementById("organizationName").value;
     //Create list of food submitted
