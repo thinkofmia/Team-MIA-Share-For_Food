@@ -1,3 +1,6 @@
+//Variables
+var organizationNames = [];
+
 //Contact US Page
 showContactUsPage = function(){
     hideAllPages();
@@ -10,11 +13,10 @@ showContactUsPage = function(){
 //List of Organization Page
 showOrganizationListPage = function(){
     hideAllPages();
-    //document.getElementById("homePage").style.display = "inline-block";
-    document.getElementById("maintext").innerHTML = 
-    "<div class = imgWrapper>"+
-    "<img src='img/charmander.jpg' alt='Share for Food Poster'>"+
-    "</div>";
+    for (name in organizationNames){
+    document.getElementById("subtext1").innerHTML += "<div class='store'><div class='storeImg'>" +
+        "<img src='img/" + name + ".jpg' alt='" + name + "'></div>" + name + "</div>";
+    }
 }
 
 //List of Food Stalls Page
