@@ -221,7 +221,7 @@ checkCorrectAmount = function(){
     //Check Rice
     if(rice){
         riceInput = document.getElementById("rice").value;
-        if (riceInput<0) {
+        if (riceInput<0|!isFloat(riceInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID RICE INPUT!<br>";
             return;
         }
@@ -233,7 +233,7 @@ checkCorrectAmount = function(){
     
     if(veggie){
         vegInput = document.getElementById("veg").value;
-        if (vegInput<0) {
+        if (vegInput<0|!isFloat(vegInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID VEG INPUT!<br>";
             return;
         }
@@ -245,7 +245,7 @@ checkCorrectAmount = function(){
 
     if(soup){
         soupInput = document.getElementById("soup").value;
-        if (soupInput<0) {
+        if (soupInput<0|!isFloat(soupInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID SOUP INPUT!<br>";
             return;
         }
@@ -257,7 +257,7 @@ checkCorrectAmount = function(){
 
     if(meat){
         meatInput = document.getElementById("meat").value;
-        if (meatInput<0) {
+        if (meatInput<0||!isFloat(meatInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID MEAT INPUT!<br>";
             return;
         }
@@ -290,7 +290,7 @@ subtractFromDatabase = function(){
         var newVeg = maxVegetable - parseFloat(document.getElementById("veg").value);
     if (soup)
         var newSoup = maxSoup - parseFloat(document.getElementById("soup").value);
-    if (veggie)
+    if (meat)
         var newMeat = maxMeat - parseFloat(document.getElementById("meat").value);
 }
 
