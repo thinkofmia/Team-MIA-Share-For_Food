@@ -206,15 +206,15 @@ organizationVerificationPage = function () {
     try { meat = document.getElementById("meatCheck").checked; } catch (error) { }
     try { soup = document.getElementById("soupCheck").checked; } catch (error) { }
     //Check list of organizations
-    //txt = "";
-    /*for (var i =0;i<organizationNames.length;i++){
+    txt = "";
+    for (var i =0;i<organizationNames.length;i++){
         txt += "<option value='"+organizationNames[i]["name"]+"'>"+organizationNames[i]["name"]+"</option>"
     }
-    */
+    
     //Display organization input box
-    /*document.getElementById("subtext1").innerHTML = "<br>Choose your store: <select id='selectedStore'>"+
-    txt+"</select><br><br>";*/
-    document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>";
+    document.getElementById("subtext1").innerHTML = "<br>Choose your store: <select id='selectedOrganization'>"+
+    txt+"</select><br><br>";
+    //document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>";
     //Display verification code
     document.getElementById("subtext1").innerHTML += "<b>Verification Passcode:</b> <input type='text' id='verifyCode' value='******'></input><br>";
     //Display food selected
@@ -346,7 +346,7 @@ subtractFromDatabase = function () {
 //Display confirmation page
 viewConfirmPage = function () {
     //Remember Organization Name
-    var organizationName = document.getElementById("organizationName").value;
+    var organizationName = document.getElementById("selectedOrganization").value;
     //Create list of food submitted
     var foodOrdered = "";
     if (rice)
