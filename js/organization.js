@@ -24,9 +24,9 @@ displayLocation = function (location) {
         //NTU Selected
         case "NTU":
             //North Spine
-            displayCanteens("North Spine", "North S​​pine Food Court<br>Stalls: 3<br>Seating capacity: 838<br>");
+            displayCanteens("NorthSpine", "North S​​pine Food Court<br>Stalls: 3<br>Seating capacity: 838<br>");
             //South Spine
-            displayCanteens("South Spine", "South Spine Food Court<br>Stalls: 2<br>Seating capacity: 830<br>");
+            displayCanteens("SouthSpine", "South Spine Food Court<br>Stalls: 2<br>Seating capacity: 830<br>");
 
             break;
         default:
@@ -63,17 +63,17 @@ displayStores = function (canteenName) {
     //Check which Canteen it is
     switch (canteen) {
         //Display Stores in North Spine
-        case "North Spine":
+        case "NorthSpine":
             noOfStores = 3;
-            displayIndividualStore("Chicken Rice");
-            displayIndividualStore("Mixed Vegetable Rice");
+            displayIndividualStore("ChickenRice");
+            displayIndividualStore("MixedVegetableRice");
             displayIndividualStore("Vegetarian");
             break;
         //By Default display South Spine
         default:
             noOfStores = 2;
-            displayIndividualStore("Duck Rice");
-            displayIndividualStore("Nasi Briyani");
+            displayIndividualStore("DuckRice");
+            displayIndividualStore("NasiBriyani");
             break;
     }
 }
@@ -88,12 +88,12 @@ displayIndividualStore = function (stallName) {
         "<img src='img/" + stallName + ".jpg' alt='Stall Img' width='290' height='200' onclick=\"displayFood('" + stallName + "')\"></div>" + txt + "</div>";
     //Check stallName and print accordingly
     switch (stallName) {
-        case "Chicken Rice":
+        case "ChickenRice":
             document.getElementById("storeDescription" + stallName).innerHTML = "Chicken Rice";
             document.getElementById("foodType" + stallName).innerHTML = "Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Mixed Vegetable Rice":
+        case "MixedVegetableRice":
             document.getElementById("storeDescription" + stallName).innerHTML = "Mixed Vegetable Rice";
             document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
@@ -103,12 +103,12 @@ displayIndividualStore = function (stallName) {
             document.getElementById("foodType" + stallName).innerHTML = "Vegetarian";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Duck Rice":
+        case "DuckRice":
             document.getElementById("storeDescription" + stallName).innerHTML = "Duck Rice";
             document.getElementById("foodType" + stallName).innerHTML = "Non-Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
             break;
-        case "Nasi Briyani":
+        case "NasiBriyani":
             document.getElementById("storeDescription" + stallName).innerHTML = "Nasi Briyani";
             document.getElementById("foodType" + stallName).innerHTML = "Halal";
             document.getElementById("foodAvailability" + stallName).innerHTML = "Yes";
@@ -120,18 +120,26 @@ displayIndividualStore = function (stallName) {
 displayFood = function (stallName) {
     //save the visited store
     store = stallName;
-    //Reset global variables
-    rice = false;
-    meat = false;
-    soup = false;
-    veggie = false;
+    document.getElementById("subtext1").innerHTML = "";
+    //Display Food Store Name
+    document.getElementById("maintext").innerHTML = store + "<br>";
+    console.log('canteen/' + canteen + '/'+ store);
+    firebase.database().ref('canteen/' + canteen + '/'+ store).once('value').then(function(snapshot){
+        //descriptionData= snapshot.val().description;
+        meatData = snapshot.val().meat;
+        console.log(meatData);
+        riceData = snapshot.val().rice;
+        soupData = snapshot.val().soup;
+        vegetableData = snapshot.val().vegetable;
+        timeToCollect = snapshot.val().timeToCollect;
 
     //Display Left Over Food Available in check boxes
     document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
     document.getElementById("subtext1").innerHTML +=
         //Display Rice
+        
         "<input type='checkbox' id='riceCheck' name='Rice'>" +
-        "<label for='riceCheck'> Rice <br>Estimated Amount: 5kg</label><br><br>" +
+        "<label for='riceCheck'> Rice <br>Estimated Amount:"+ riceData+" kg</label><br><br>" +
         //Display Vegetables
         "<input type='checkbox' id='vegCheck' name='Vegetables'>" +
         "<label for='vegeCheck'> Vegetables <br>Estimated Amount: 10kg</label><br><br>" +
@@ -143,7 +151,7 @@ displayFood = function (stallName) {
         "<label for='soupCheck'> Soup <br>Estimated Amount: 2kg</label><br><br>" +
         //The ones that are checked will be available for input later
         "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
-
+    });
 }
 
 organizationVerificationPage = function () {
