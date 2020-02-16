@@ -126,7 +126,7 @@ displayFood = function (stallName) {
     store = stallName;
     document.getElementById("subtext1").innerHTML = "";
     //Display Food Store Name
-    document.getElementById("maintext").innerHTML = "<b>"+store + "</b><br>";
+    document.getElementById("maintext").innerHTML = "<b>" + store + "</b><br>";
     console.log('canteen/' + canteen + '/' + store);
     firebase.database().ref('canteen/' + canteen + '/' + store).once('value').then(function (snapshot) {
         //descriptionData= snapshot.val().description;
@@ -138,65 +138,65 @@ displayFood = function (stallName) {
 
         //Display Left Over Food Available in check boxes
         document.getElementById("subtext1").innerHTML = "Expected Food Left: <br>";
-        
-            //Display Rice
-            if (riceData>0){
-                document.getElementById("subtext1").innerHTML += "<input type='checkbox' id='riceCheck' name='Rice'>" +
+
+        //Display Rice
+        if (riceData > 0) {
+            document.getElementById("subtext1").innerHTML += "<input type='checkbox' id='riceCheck' name='Rice'>" +
                 "Rice <br>Estimated Amount: <label id = 'rice1' for='riceCheck'>" + riceData + "</label> kg<br><br>";
-                maxRice = document.getElementById("rice1").innerText;
-            }
-            //Display Vegetables
-            if (vegetableData>0){
-                document.getElementById("subtext1").innerHTML +=
+            maxRice = document.getElementById("rice1").innerText;
+        }
+        //Display Vegetables
+        if (vegetableData > 0) {
+            document.getElementById("subtext1").innerHTML +=
                 "<input type='checkbox' id='vegCheck' name='Vegetables'>" +
                 "Vegetables <br>Estimated Amount:<label id = 'vege1' for='vegeCheck'>" + vegetableData + "</label> kg<br><br>";
-                maxVegetable = document.getElementById("vege1").innerHTML;
-            }
-            //Display Meat
-            if (meatData>0){
-                document.getElementById("subtext1").innerHTML +=
+            maxVegetable = document.getElementById("vege1").innerHTML;
+        }
+        //Display Meat
+        if (meatData > 0) {
+            document.getElementById("subtext1").innerHTML +=
                 "<input type='checkbox' id='meatCheck' name='Meat'>" +
                 "Meat <br>Estimated Amount:<label id = 'meat1' for='meatCheck'>" + meatData + "</label> kg<br><br>";
-                maxMeat = document.getElementById("meat1").innerHTML;
-            }
-            //Display Soup
-            if (soupData>0){
-                document.getElementById("subtext1").innerHTML +=
+            maxMeat = document.getElementById("meat1").innerHTML;
+        }
+        //Display Soup
+        if (soupData > 0) {
+            document.getElementById("subtext1").innerHTML +=
                 "<input type='checkbox' id='soupCheck' name='Soup'>" +
                 "Soup <br>Estimated Amount: <label id = 'soup1' for='soupCheck'>" + soupData + "</label> kg<br><br>";
-                maxSoup = document.getElementById("soup1").innerHTML;
-            }
+            maxSoup = document.getElementById("soup1").innerHTML;
+        }
 
-            //The ones that are checked will be available for input later
-            //Submit Button
-            document.getElementById("subtext1").innerHTML += "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
+        //The ones that are checked will be available for input later
+        //Submit Button
+        document.getElementById("subtext1").innerHTML += "<input type='submit' value='Search' onclick='organizationVerificationPage()'>";
         //console.log([maxRice,maxVegetable,maxMeat,maxSoup]);
 
     });
-    
+
 }
 
 organizationVerificationPage = function () {
     //Initialization
     rice = false; veggie = false; meat = false; soup = false;
     //Check which variables are checked
-    try { rice = document.getElementById("riceCheck").checked;} catch(error){}
-    try { veggie = document.getElementById("vegCheck").checked;}catch(error){}
-    try { meat = document.getElementById("meatCheck").checked;}catch(error){}
-    try { soup = document.getElementById("soupCheck").checked;}catch(error){}
+    try { rice = document.getElementById("riceCheck").checked; } catch (error) { }
+    try { veggie = document.getElementById("vegCheck").checked; } catch (error) { }
+    try { meat = document.getElementById("meatCheck").checked; } catch (error) { }
+    try { soup = document.getElementById("soupCheck").checked; } catch (error) { }
 
     //Display organization input box and verification Passcode
     document.getElementById("subtext1").innerHTML = "<b>Organization:</b> <input type='text' id='organizationName' value='Anson and Friends'></input><br>" +
         "<b>Verification Passcode:</b> <input type='text' id='verifyCode'></input><br>";
     //Display food selected
     if (rice)
-        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value = 0></input>/"+maxRice+" kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Rice:</b> <input type='text' id='rice' value = 0></input>/" + maxRice + " kg<br>";
     if (veggie)
-        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg' value = 0></input>/"+maxVegetable+" kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Vegetables:</b> <input type='text' id='veg' value = 0></input>/" + maxVegetable + " kg<br>";
     if (meat)
-        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat' value = 0></input>/"+maxMeat+" kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Meat:</b> <input type='text' id='meat' value = 0></input>/" + maxMeat + " kg<br>";
     if (soup)
-        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup' value = 0></input>/"+maxSoup+" kg<br>";
+        document.getElementById("subtext1").innerHTML += "<b>Soup:</b> <input type='text' id='soup' value = 0></input>/" + maxSoup + " kg<br>";
     //Display Time to collect and remarks
     document.getElementById("subtext1").innerHTML += "<b>Collection Time:</b> <input type='text' id='collectionTime' value='00:00'></input><br>" +
         "<b>Remarks:</b> <input type='text' id='remarks' value='No remarks'></input><br>";
@@ -204,7 +204,7 @@ organizationVerificationPage = function () {
 }
 
 //Check if Success
-checkCorrectAmount = function(){
+checkCorrectAmount = function () {
     document.getElementById("subtext2").innerHTML = "";
     //Local vars
     var riceInput = 0;
@@ -217,58 +217,58 @@ checkCorrectAmount = function(){
     maxVegetable = parseFloat(maxVegetable);
     maxRice = parseFloat(maxRice);
     maxSoup = parseFloat(maxSoup);
-    
+
     //Check Rice
-    if(rice){
+    if (rice) {
         riceInput = document.getElementById("rice").value;
-        if (riceInput<0|!isFloat(riceInput)) {
+        if (riceInput < 0 | !isFloat(riceInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID RICE INPUT!<br>";
             return;
         }
-        else if(riceInput>maxRice){
+        else if (riceInput > maxRice) {
             document.getElementById("subtext2").innerHTML = "RICE INPUT EXCEEDED MAX RICE!<br>";
             return;
         }
     }
-    
-    if(veggie){
+
+    if (veggie) {
         vegInput = document.getElementById("veg").value;
-        if (vegInput<0|!isFloat(vegInput)) {
+        if (vegInput < 0 | !isFloat(vegInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID VEG INPUT!<br>";
             return;
         }
-        else if(vegInput>maxVegetable){
+        else if (vegInput > maxVegetable) {
             document.getElementById("subtext2").innerHTML = "VEG INPUT EXCEEDED MAX VEG!<br>";
             return;
         }
     }
 
-    if(soup){
+    if (soup) {
         soupInput = document.getElementById("soup").value;
-        if (soupInput<0|!isFloat(soupInput)) {
+        if (soupInput < 0 | !isFloat(soupInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID SOUP INPUT!<br>";
             return;
         }
-        else if(soupInput>maxSoup){
+        else if (soupInput > maxSoup) {
             document.getElementById("subtext2").innerHTML = "SOUP INPUT EXCEEDED MAX SOUP!<br>";
             return;
         }
     }
 
-    if(meat){
+    if (meat) {
         meatInput = document.getElementById("meat").value;
-        if (meatInput<0||!isFloat(meatInput)) {
+        if (meatInput < 0 || !isFloat(meatInput)) {
             document.getElementById("subtext2").innerHTML = "INVALID MEAT INPUT!<br>";
             return;
         }
-        else if(meatInput>maxMeat){
+        else if (meatInput > maxMeat) {
             document.getElementById("subtext2").innerHTML = "MEAT INPUT EXCEEDED MAX MEATs!<br>";
             return;
         }
     }
-    
+
     //Check if no input
-    if(meatInput==0 & vegInput==0 & soupInput==0 & riceInput==0){
+    if (meatInput == 0 & vegInput == 0 & soupInput == 0 & riceInput == 0) {
         document.getElementById("subtext2").innerHTML = "YOU DIDN'T EVEN REQUEST ANYTHING!<br>";
         return;
     }
@@ -282,16 +282,36 @@ checkCorrectAmount = function(){
 
 }
 
-subtractFromDatabase = function(){
+subtractFromDatabase = function () {
     //Get float value of Inputs
+
+
     if (rice)
         var newRice = maxRice - parseFloat(document.getElementById("rice").value);
+    else { newRice = maxRice; }
     if (veggie)
         var newVeg = maxVegetable - parseFloat(document.getElementById("veg").value);
+    else { newVeg = maxVegetable; }
     if (soup)
         var newSoup = maxSoup - parseFloat(document.getElementById("soup").value);
+    else { newSoup = maxSoup; }
     if (meat)
         var newMeat = maxMeat - parseFloat(document.getElementById("meat").value);
+    else { newMeat = maxMeat; }
+
+    //Store it into Firebase
+    const newData = {
+        meat: newMeat,
+        rice: newRice,
+        soup: newSoup,
+        vegetable: newVeg,
+    };
+
+    const updates = {};
+    updates['canteen/' + canteen + '/' + store] = newData;
+    console.log(updates);
+    database.ref().update(updates);
+
 }
 
 //Display confirmation page
