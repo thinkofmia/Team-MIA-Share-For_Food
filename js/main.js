@@ -13,7 +13,7 @@ showHomePage = function(){
     hideAllPages();
     document.getElementById("maintext").innerHTML = 
     "<div class = imgWrapper>"+
-    "<img src='img/MIA.png' alt='Share for Food Poster' width='400' height='200'>"+
+    "<img src='img/poster.png' alt='Share for Food Poster' width='800' height='400'>"+
     "</div>";
 
 }
