@@ -11,7 +11,6 @@ getLastDisplayText = function(){
 //Home Page
 showHomePage = function(){
     hideAllPages();
-    //document.getElementById("homePage").style.display = "inline-block";
     document.getElementById("maintext").innerHTML = 
     "<div class = imgWrapper>"+
     "<img src='img/pikaevee.gif' alt='Share for Food Poster' width='400' height='200'>"+
@@ -19,13 +18,10 @@ showHomePage = function(){
 
 }
 
-//Hide all Pages (Not needed)
+//Hide all Pages
 hideAllPages = function(){
     document.getElementById("subtext1").innerHTML = "";
     document.getElementById("maintext").innerHTML = "";
     document.getElementById("buttonOrganization").style.backgroundColor = "rgb(252, 189, 95)";
     document.getElementById("buttonFoodStores").style.backgroundColor = "rgb(252, 189, 95)";
-    //document.getElementById("homePage").style.display = "none";
-    //document.getElementById("aboutUsPage").style.display = "none";
-    //document.getElementById("organizationListPage").style.display = "none";
 }
