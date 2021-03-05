@@ -5,7 +5,7 @@ Submission for 24hackathon (15th-16th Feb)
 
 # Instructions
 1) Locate a folder in the terminal (Using 'cd')
-2) Clone the repo into the folder (Using 'git clone https://github.com/FremontTeng/Team-MIA-Share-For_Food')
+2) Clone the repo into the folder (Using 'git clone https://github.com/thinkofmia/Team-MIA-Share-For_Food')
 3) To use the app, run 'app.html'
 
 # One/two-page statement mentioning:
